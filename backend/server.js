@@ -16,6 +16,16 @@ app.use(cors({
 
 app.use(express.json());
 
+// Root Welcome / Status Route
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    message: '🌸 nailmores Backend API Server is running successfully on Render!',
+    healthCheck: '/api/health',
+    products: '/api/products'
+  });
+});
+
 // Server health check
 app.get('/api/health', (req, res) => {
   res.json({
