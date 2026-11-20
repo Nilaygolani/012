@@ -19,6 +19,27 @@ export default function ProductDetailPage({ productId, onBack }) {
   const [justAdded, setJustAdded] = useState(false);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
 
+  const relatedScrollRef = useRef(null);
+  const [canScrollLeftRel, setCanScrollLeftRel] = useState(false);
+  const [canScrollRightRel, setCanScrollRightRel] = useState(true);
+
+  const checkRelatedScroll = () => {
+    if (!relatedScrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = relatedScrollRef.current;
+    setCanScrollLeftRel(scrollLeft > 10);
+    setCanScrollRightRel(scrollLeft + clientWidth < scrollWidth - 10);
+  };
+
+  const handleRelatedScroll = (direction) => {
+    if (!relatedScrollRef.current) return;
+    const scrollAmount = relatedScrollRef.current.clientWidth * 0.8;
+    relatedScrollRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+    setTimeout(checkRelatedScroll, 350);
+  };
+
   const mainGalleryRef = useRef(null);
   const thumbnailStripRef = useRef(null);
   const isDraggingRef = useRef(false);
@@ -116,12 +137,12 @@ export default function ProductDetailPage({ productId, onBack }) {
       })
       .catch(err => console.warn('[PDP] Could not fetch product:', err));
 
-    // Fetch all products to populate "You May Also Love"
+    // Fetch all products to populate "You May Also Love" (All available products for horizontal shelf)
     fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
       .then(data => {
         const others = (data.products || []).filter(p => p.id !== productId);
-        setRelatedProducts(others.slice(0, 4));
+        setRelatedProducts(others);
       })
       .catch(() => {});
 
@@ -736,46 +757,102 @@ export default function ProductDetailPage({ productId, onBack }) {
           )}
         </section>
 
-        {/* You May Also Love (Related Kurtis & Bottoms) */}
+        {/* You May Also Love (Related Kurtis & Bottoms) - Scrollable All Products Carousel */}
         {relatedProducts.length > 0 && (
-          <section className="pt-12 border-t border-brand-border/60">
-            <div className="flex items-center justify-between mb-8">
+          <section className="pt-10 sm:pt-14 pb-12 border-t border-brand-border/60">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-primary">
-                  Complete Your Ensemble
-                </span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sand text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
+                  <Sparkles className="w-3 h-3 text-brand-gold" />
+                  <span>Curated Atelier Recommendations</span>
+                </div>
                 <h3 className="font-serif text-2xl sm:text-3xl font-normal text-brand-dark mt-0.5">
                   Complementary Silhouettes
                 </h3>
+                <p className="text-xs text-brand-muted mt-1 font-light">
+                  Explore our handcrafted collection &bull; swipe left and right to view all designs ({relatedProducts.length} items).
+                </p>
+              </div>
+
+              {/* Left / Right Carousel Controls */}
+              <div className="flex items-center gap-2 self-start sm:self-end">
+                <span className="text-[11px] text-brand-muted hidden md:inline font-mono mr-2">
+                  Scroll designs &rarr;
+                </span>
+
+                <button
+                  onClick={() => handleRelatedScroll('left')}
+                  disabled={!canScrollLeftRel}
+                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all ${
+                    canScrollLeftRel
+                      ? 'border-brand-dark bg-white hover:bg-brand-primary hover:text-white text-brand-dark shadow-xs'
+                      : 'border-brand-border/60 bg-brand-sand/30 text-brand-muted/40 cursor-not-allowed'
+                  }`}
+                  aria-label="Previous products"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+
+                <button
+                  onClick={() => handleRelatedScroll('right')}
+                  disabled={!canScrollRightRel}
+                  className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center border transition-all ${
+                    canScrollRightRel
+                      ? 'border-brand-dark bg-white hover:bg-brand-primary hover:text-white text-brand-dark shadow-xs'
+                      : 'border-brand-border/60 bg-brand-sand/30 text-brand-muted/40 cursor-not-allowed'
+                  }`}
+                  aria-label="Next products"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {/* Horizontal Scroll Track: Shows all products with smooth swipe & scroll */}
+            <div
+              ref={relatedScrollRef}
+              onScroll={checkRelatedScroll}
+              className="flex gap-3 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0"
+            >
               {relatedProducts.map((rel) => (
                 <div
                   key={rel.id}
                   onClick={() => {
                     eventBus.emit(EVENTS.VIEW_PRODUCT_DETAIL, rel.id);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:border-brand-primary/40 transition-all duration-300 hover:shadow-lg cursor-pointer flex flex-col"
+                  className="group relative cursor-pointer flex flex-col shrink-0 w-[165px] sm:w-[220px] lg:w-[calc(25%-1.125rem)] snap-start overflow-hidden rounded-2xl bg-white border border-brand-border/80 hover:border-brand-primary/50 transition-all duration-300 shadow-2xs hover:shadow-xl hover:-translate-y-1"
                 >
-                  <div className="aspect-[3/4] w-full overflow-hidden bg-brand-sand/30">
+                  <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-sand/30">
                     <img
                       src={rel.image}
                       alt={rel.name}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-106 transition-transform duration-500 ease-out"
+                      loading="lazy"
                     />
+                    {rel.badge && (
+                      <span className="absolute top-2 left-2 px-2 py-0.5 rounded-full text-[8px] sm:text-[9px] uppercase tracking-wider font-bold bg-brand-dark/90 text-brand-sand backdrop-blur-xs">
+                        {rel.badge}
+                      </span>
+                    )}
                   </div>
-                  <div className="p-3.5 flex flex-col flex-1">
-                    <span className="text-[10px] uppercase font-bold text-brand-primary tracking-wider mb-1">
+                  <div className="p-3 sm:p-3.5 flex flex-col flex-1">
+                    <span className="text-[9px] sm:text-[10px] uppercase font-bold text-brand-primary tracking-wider mb-1 truncate">
                       {rel.category}
                     </span>
-                    <h5 className="font-serif font-medium text-sm text-brand-dark line-clamp-1 group-hover:text-brand-primary transition-colors">
+                    <h5 className="font-serif font-medium text-xs sm:text-sm text-brand-dark line-clamp-1 group-hover:text-brand-primary transition-colors">
                       {rel.name}
                     </h5>
-                    <span className="text-sm font-bold text-brand-dark mt-auto pt-2">
-                      ₹{rel.price?.toLocaleString('en-IN')}
-                    </span>
+                    <div className="mt-auto pt-2 flex items-baseline justify-between border-t border-brand-border/40">
+                      <span className="text-xs sm:text-sm font-bold text-brand-dark font-sans">
+                        ₹{rel.price?.toLocaleString('en-IN')}
+                      </span>
+                      {rel.originalPrice && rel.originalPrice > rel.price && (
+                        <span className="text-[10px] sm:text-xs text-brand-muted line-through font-sans">
+                          ₹{rel.originalPrice?.toLocaleString('en-IN')}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
