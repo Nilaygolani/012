@@ -1,7 +1,8 @@
 import { create } from 'zustand';
 import { eventBus, EVENTS } from '../eventBus/bus';
+import { API_BASE_URL } from '../../config/api';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = `${API_BASE_URL}/api`;
 
 export const useAuthStore = create((set, get) => {
   const savedToken = localStorage.getItem('nailmores_token');

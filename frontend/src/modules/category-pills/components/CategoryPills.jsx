@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ArrowUpRight, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 // Metadata presets for ethnic categories
 const CATEGORY_META = {
@@ -58,7 +59,7 @@ export default function CategoryPills() {
   useEffect(() => {
     const fetchDynamicCategories = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/products');
+        const res = await fetch(`${API_BASE_URL}/api/products`);
         if (res.ok) {
           const data = await res.json();
           const prods = data.products || [];

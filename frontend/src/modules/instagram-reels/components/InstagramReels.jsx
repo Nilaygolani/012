@@ -4,6 +4,7 @@ import {
   ChevronLeft, ChevronRight, X, Heart, Sparkles, ExternalLink, ArrowRight
 } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 export default function InstagramReels() {
   const scrollRef = useRef(null);
@@ -22,7 +23,7 @@ export default function InstagramReels() {
   // Fetch Reels from Backend API
   const fetchReels = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/reels');
+      const res = await fetch(`${API_BASE_URL}/api/reels`);
       if (res.ok) {
         const data = await res.json();
         setReels(data.reels || []);
@@ -98,7 +99,7 @@ export default function InstagramReels() {
     if (likedMap[reelId]) return;
     setLikedMap(prev => ({ ...prev, [reelId]: true }));
     try {
-      await fetch(`http://localhost:5000/api/reels/${reelId}/like`, { method: 'POST' });
+      await fetch(`${API_BASE_URL}/api/reels/${reelId}/like`, { method: 'POST' });
     } catch (e) {}
   };
 

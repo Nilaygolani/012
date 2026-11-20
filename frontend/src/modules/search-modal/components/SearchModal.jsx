@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, X, Eye } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 const SUGGESTIONS = ['Short Kurtis', 'Cotton Kurtis', 'Kurti Sets', 'Linen Pants', 'Palazzos', 'Co-ord Sets'];
 
@@ -14,7 +15,7 @@ export default function SearchModal() {
     const unbindOpen = eventBus.on(EVENTS.OPEN_SEARCH, () => {
       setIsOpen(true);
       setTimeout(() => inputRef.current?.focus(), 100);
-      fetch('http://localhost:5000/api/products')
+      fetch(`${API_BASE_URL}/api/products`)
         .then(r => r.json())
         .then(d => setProducts(d.products || []))
         .catch(() => {});

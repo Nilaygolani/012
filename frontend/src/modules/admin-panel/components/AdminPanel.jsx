@@ -6,6 +6,7 @@ import {
 import { useAuthStore } from '../../../core/auth/authStore';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
 import Logo from '../../../core/branding/Logo';
+import { API_BASE_URL } from '../../../config/api';
 
 export default function AdminPanel() {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +102,7 @@ export default function AdminPanel() {
     const headers = { 'Authorization': `Bearer ${token}` };
 
     try {
-      const dRes = await fetch('http://localhost:5000/api/analytics/dashboard', { headers });
+      const dRes = await fetch(`${API_BASE_URL}/api/analytics/dashboard`, { headers });
       if (dRes.ok) {
         const d = await dRes.json();
         setMetrics(d.metrics);
@@ -109,31 +110,31 @@ export default function AdminPanel() {
         setRecentOrders(d.recentOrders);
       }
 
-      const pRes = await fetch('http://localhost:5000/api/products');
+      const pRes = await fetch(`${API_BASE_URL}/api/products`);
       if (pRes.ok) {
         const p = await pRes.json();
         setProducts(p.products || []);
       }
 
-      const oRes = await fetch('http://localhost:5000/api/orders', { headers });
+      const oRes = await fetch(`${API_BASE_URL}/api/orders`, { headers });
       if (oRes.ok) {
         const o = await oRes.json();
         setOrders(o.orders || []);
       }
 
-      const rRes = await fetch('http://localhost:5000/api/reviews/admin/all', { headers });
+      const rRes = await fetch(`${API_BASE_URL}/api/reviews/admin/all`, { headers });
       if (rRes.ok) {
         const r = await rRes.json();
         setReviews(r.reviews || []);
       }
 
-      const cRes = await fetch('http://localhost:5000/api/auth/users', { headers });
+      const cRes = await fetch(`${API_BASE_URL}/api/auth/users`, { headers });
       if (cRes.ok) {
         const c = await cRes.json();
         setCustomers(c.users || []);
       }
 
-      const reelRes = await fetch('http://localhost:5000/api/reels');
+      const reelRes = await fetch(`${API_BASE_URL}/api/reels`);
       if (reelRes.ok) {
         const rd = await reelRes.json();
         setReels(rd.reels || []);
@@ -168,13 +169,13 @@ export default function AdminPanel() {
     };
 
     if (editingProduct) {
-      await fetch(`http://localhost:5000/api/products/${editingProduct.id}`, {
+      await fetch(`${API_BASE_URL}/api/products/${editingProduct.id}`, {
         method: 'PUT',
         headers,
         body: JSON.stringify(payload)
       });
     } else {
-      await fetch('http://localhost:5000/api/products', {
+      await fetch(`${API_BASE_URL}/api/products`, {
         method: 'POST',
         headers,
         body: JSON.stringify(payload)
@@ -192,7 +193,7 @@ export default function AdminPanel() {
     if (!reelForm.title || !reelForm.videoUrl) return;
 
     try {
-      const res = await fetch('http://localhost:5000/api/reels', {
+      const res = await fetch(`${API_BASE_URL}/api/reels`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reelForm)
@@ -217,7 +218,7 @@ export default function AdminPanel() {
   const handleDeleteReel = async (reelId) => {
     if (!window.confirm('Are you sure you want to delete this video drop?')) return;
     try {
-      await fetch(`http://localhost:5000/api/reels/${reelId}`, { method: 'DELETE' });
+      await fetch(`${API_BASE_URL}/api/reels/${reelId}`, { method: 'DELETE' });
       fetchAllAdminData();
       eventBus.emit(EVENTS.REFRESH_REELS);
     } catch (err) {
@@ -227,7 +228,7 @@ export default function AdminPanel() {
 
   const handleDeleteProduct = async (id) => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
-    await fetch(`http://localhost:5000/api/products/${id}`, {
+    await fetch(`${API_BASE_URL}/api/products/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     });
@@ -237,7 +238,7 @@ export default function AdminPanel() {
 
   const handleSaveTracking = async (orderId) => {
     if (!trackingId) return;
-    await fetch(`http://localhost:5000/api/orders/${orderId}/tracking`, {
+    await fetch(`${API_BASE_URL}/api/orders/${orderId}/tracking`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -257,7 +258,7 @@ export default function AdminPanel() {
   };
 
   const handleUpdateOrderStatus = async (orderId, newStatus) => {
-    await fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
+    await fetch(`${API_BASE_URL}/api/orders/${orderId}/status`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -270,7 +271,7 @@ export default function AdminPanel() {
 
   const handleDeleteReview = async (id) => {
     if (!window.confirm('Delete this customer review?')) return;
-    await fetch(`http://localhost:5000/api/reviews/${id}`, {
+    await fetch(`${API_BASE_URL}/api/reviews/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     });

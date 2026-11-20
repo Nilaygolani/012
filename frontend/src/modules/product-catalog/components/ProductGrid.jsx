@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ProductCard from './ProductCard';
 import { Sparkles, Loader2, ChevronLeft, ChevronRight, SlidersHorizontal } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 const TABS = [
   { id: 'all', label: 'All Silhouettes' },
@@ -207,7 +208,7 @@ export default function ProductGrid() {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/products');
+      const res = await fetch(`${API_BASE_URL}/api/products`);
       if (res.ok) {
         const data = await res.json();
         setProducts(data.products || []);

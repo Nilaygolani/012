@@ -3,6 +3,7 @@ import { X, Trash2, ShoppingBag, ArrowRight, Sparkles, CheckCircle2, ShieldCheck
 import { useCartStore } from '../store/cartStore';
 import { useAuthStore } from '../../../core/auth/authStore';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 
 
@@ -79,7 +80,7 @@ export default function CartDrawer() {
 
     try {
       // Step A: Create Order on Backend
-      const orderRes = await fetch('http://localhost:5000/api/payment/create-order', {
+      const orderRes = await fetch(`${API_BASE_URL}/api/payment/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +103,7 @@ export default function CartDrawer() {
         order_id: orderData.orderId,
         handler: async function (response) {
           // Step C: Verify payment signature & save confirmed order
-          const verifyRes = await fetch('http://localhost:5000/api/payment/verify-and-confirm', {
+          const verifyRes = await fetch(`${API_BASE_URL}/api/payment/verify-and-confirm`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

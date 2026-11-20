@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useAuthStore } from '../../../core/auth/authStore';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
+import { API_BASE_URL } from '../../../config/api';
 
 export default function UserAccountDrawer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ export default function UserAccountDrawer() {
     if (!token) return;
     setLoadingOrders(true);
     try {
-      const res = await fetch('http://localhost:5000/api/orders/my-orders', {
+      const res = await fetch(`${API_BASE_URL}/api/orders/my-orders`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -73,7 +74,7 @@ export default function UserAccountDrawer() {
     if (!token) return;
     setLoadingReviews(true);
     try {
-      const res = await fetch('http://localhost:5000/api/reviews/my-reviews', {
+      const res = await fetch(`${API_BASE_URL}/api/reviews/my-reviews`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (res.ok) {
@@ -81,7 +82,7 @@ export default function UserAccountDrawer() {
         setUserReviews(data.reviews || []);
       } else {
         // Fallback: search all public reviews for this user
-        const allRes = await fetch('http://localhost:5000/api/reviews');
+        const allRes = await fetch(`${API_BASE_URL}/api/reviews`);
         if (allRes.ok) {
           const allData = await allRes.json();
           const filtered = (allData.reviews || []).filter(

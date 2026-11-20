@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Star, CheckCircle, Quote, MessageSquarePlus, Sparkles } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
 import { useAuthStore } from '../../../core/auth/authStore';
+import { API_BASE_URL } from '../../../config/api';
 
 export default function CustomerTestimonials() {
   const [reviews, setReviews] = useState([]);
@@ -9,7 +10,7 @@ export default function CustomerTestimonials() {
 
   const fetchReviews = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/reviews');
+      const res = await fetch(`${API_BASE_URL}/api/reviews`);
       if (res.ok) {
         const data = await res.json();
         setReviews(data.reviews || []);

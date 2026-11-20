@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { eventBus, EVENTS } from '../../../core/eventBus/bus';
 import { useAuthStore } from '../../../core/auth/authStore';
+import { API_BASE_URL } from '../../../config/api';
 
 export default function ProductDetailPage({ productId, onBack }) {
   const [product, setProduct] = useState(null);
@@ -106,7 +107,7 @@ export default function ProductDetailPage({ productId, onBack }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Fetch product details
-    fetch(`http://localhost:5000/api/products/${productId}`)
+    fetch(`${API_BASE_URL}/api/products/${productId}`)
       .then(res => res.json())
       .then(data => {
         setProduct(data);
@@ -116,7 +117,7 @@ export default function ProductDetailPage({ productId, onBack }) {
       .catch(err => console.warn('[PDP] Could not fetch product:', err));
 
     // Fetch all products to populate "You May Also Love"
-    fetch('http://localhost:5000/api/products')
+    fetch(`${API_BASE_URL}/api/products`)
       .then(res => res.json())
       .then(data => {
         const others = (data.products || []).filter(p => p.id !== productId);
@@ -125,7 +126,7 @@ export default function ProductDetailPage({ productId, onBack }) {
       .catch(() => {});
 
     // Fetch reviews for this specific product
-    fetch(`http://localhost:5000/api/reviews/product/${productId}`)
+    fetch(`${API_BASE_URL}/api/reviews/product/${productId}`)
       .then(res => res.json())
       .then(data => {
         setReviews(data.reviews || []);
@@ -187,7 +188,7 @@ export default function ProductDetailPage({ productId, onBack }) {
     if (!token || !newReviewComment.trim()) return;
     setReviewSubmitting(true);
     try {
-      const res = await fetch('http://localhost:5000/api/reviews', {
+      const res = await fetch(`${API_BASE_URL}/api/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
