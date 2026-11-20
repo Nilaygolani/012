@@ -24,16 +24,16 @@ export default function FooterNewsletter() {
   };
 
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-12 border-t border-brand-border/20">
+    <footer className="bg-brand-dark text-white pt-10 sm:pt-16 pb-8 sm:pb-12 border-t border-brand-border/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-10 mb-14 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-gold">
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-10 mb-10 sm:mb-14 text-center max-w-3xl mx-auto">
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-gold">
             Join The Nailmores Circle
           </span>
-          <h3 className="font-serif text-2xl sm:text-3xl font-normal text-white mt-1 mb-2">
+          <h3 className="font-serif text-xl sm:text-3xl font-normal text-white mt-1 mb-2">
             Enjoy Flat ₹200 Off on Your Maiden Order
           </h3>
-          <p className="text-xs sm:text-sm text-brand-sand/70 max-w-md mx-auto mb-6 font-light">
+          <p className="text-xs sm:text-sm text-brand-sand/70 max-w-md mx-auto mb-5 sm:mb-6 font-light">
             Be the first to explore limited kurti drops, seasonal handblocks, and private secret sales.
           </p>
 
@@ -51,13 +51,13 @@ export default function FooterNewsletter() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded-full pl-10 pr-4 py-3 text-xs text-white placeholder-brand-sand/50 focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                  className="w-full bg-white/10 border border-white/20 rounded-full pl-10 pr-4 py-2.5 sm:py-3 text-xs text-white placeholder-brand-sand/50 focus:outline-none focus:ring-1 focus:ring-brand-gold"
                 />
-                <Mail className="w-4 h-4 text-brand-sand/50 absolute left-3.5 top-3.5" />
+                <Mail className="w-4 h-4 text-brand-sand/50 absolute left-3.5 top-3 sm:top-3.5" />
               </div>
               <button
                 type="submit"
-                className="bg-brand-primary hover:bg-brand-primaryDark text-white px-6 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
+                className="bg-brand-primary hover:bg-brand-primaryDark text-white px-6 py-2.5 sm:py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors shrink-0"
               >
                 Subscribe
               </button>
@@ -65,7 +65,7 @@ export default function FooterNewsletter() {
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 pb-8 sm:pb-12 border-b border-white/10">
           <div className="lg:col-span-2 space-y-4">
             <div className="text-left">
               <span className="font-serif text-2xl tracking-[0.18em] font-medium text-white uppercase">
@@ -165,11 +165,11 @@ export default function FooterNewsletter() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-sand/60 gap-4">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-brand-sand/60 gap-3 sm:gap-4 text-center sm:text-left">
           <div>
             &copy; {new Date().getFullYear()} <strong>nailmores</strong>. All rights reserved. Handcrafted in India.
           </div>
-          <div className="flex items-center gap-3 text-brand-sand/80">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3 text-brand-sand/80">
             <span>Razorpay Secure Online</span>
             <span>&bull;</span>
             <span>UPI</span>

@@ -35,34 +35,34 @@ export default function CustomerTestimonials() {
   };
 
   return (
-    <section className="py-20 bg-white border-b border-brand-border/60">
+    <section className="py-12 sm:py-20 bg-white border-b border-brand-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.25em] uppercase text-brand-primary mb-2">
               <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
               <span>Patron Testimonials</span>
             </div>
-            <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-brand-dark">
+            <h3 className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal text-brand-dark">
               Words from Our Patrons
             </h3>
           </div>
 
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <div className="flex items-center gap-1.5 bg-brand-sand/40 px-3.5 py-1.5 rounded-full border border-brand-border">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mt-2 sm:mt-4 md:mt-0">
+            <div className="flex items-center gap-1.5 bg-brand-sand/40 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full border border-brand-border text-xs">
               <div className="flex text-amber-500">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  <Star key={i} className="w-3 sm:w-3.5 h-3 sm:h-3.5 fill-current" />
                 ))}
               </div>
-              <span className="text-xs font-bold text-brand-dark">4.9 / 5</span>
-              <span className="text-[11px] text-brand-muted">(25,000+ happy patrons)</span>
+              <span className="font-bold text-brand-dark">4.9 / 5</span>
+              <span className="text-[10px] sm:text-[11px] text-brand-muted">(25,000+ happy patrons)</span>
             </div>
 
             <button
               onClick={handleWriteReview}
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-dark hover:bg-brand-primary text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-brand-dark hover:bg-brand-primary text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
             >
               <MessageSquarePlus className="w-3.5 h-3.5 text-brand-gold" />
               <span>Write Review</span>
@@ -71,28 +71,28 @@ export default function CustomerTestimonials() {
         </div>
 
         {/* Reviews Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {reviews.slice(0, 6).map((review) => (
             <div
               key={review.id}
-              className="p-7 rounded-2xl bg-brand-bg/70 border border-brand-border hover:border-brand-primary/40 transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
+              className="p-5 sm:p-7 rounded-2xl bg-brand-bg/70 border border-brand-border hover:border-brand-primary/40 transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
                   <div className="flex text-amber-500">
                     {[...Array(review.rating || 5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-current" />
+                      <Star key={i} className="w-3.5 sm:w-4 h-3.5 sm:h-4 fill-current" />
                     ))}
                   </div>
-                  <Quote className="w-6 h-6 text-brand-sand stroke-1 fill-current" />
+                  <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-brand-sand stroke-1 fill-current" />
                 </div>
 
-                <p className="text-xs sm:text-sm text-brand-dark/90 leading-relaxed font-light mb-6">
+                <p className="text-xs sm:text-sm text-brand-dark/90 leading-relaxed font-light mb-4 sm:mb-6">
                   "{review.comment}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-brand-border/60">
+              <div className="pt-3.5 sm:pt-4 border-t border-brand-border/60">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
                     <span className="font-serif font-bold text-sm text-brand-dark">
@@ -100,12 +100,12 @@ export default function CustomerTestimonials() {
                     </span>
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
                   </div>
-                  <span className="text-[10px] text-brand-muted uppercase tracking-wider">
+                  <span className="text-[9px] sm:text-[10px] text-brand-muted uppercase tracking-wider">
                     Verified Order
                   </span>
                 </div>
                 {review.productName && (
-                  <p className="text-[11px] text-brand-primary font-medium mt-1 truncate">
+                  <p className="text-[10px] sm:text-[11px] text-brand-primary font-medium mt-1 truncate">
                     {review.productName}
                   </p>
                 )}

@@ -56,18 +56,18 @@ export default function ProductCard({ product }) {
         />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1 sm:gap-1.5 z-10 pointer-events-none">
           {isOutOfStock ? (
-            <span className="bg-red-600 text-white text-[9px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-md">
+            <span className="bg-red-600 text-white text-[8px] sm:text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-md">
               Out of Stock
             </span>
           ) : product.badge ? (
-            <span className="bg-brand-dark/90 text-brand-sand text-[9px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full backdrop-blur-xs shadow-xs border border-white/20">
+            <span className="bg-brand-dark/90 text-brand-sand text-[8px] sm:text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full backdrop-blur-xs shadow-xs border border-white/20">
               {product.badge}
             </span>
           ) : null}
           {discount > 0 && !isOutOfStock && (
-            <span className="bg-brand-primary text-white text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full shadow-xs">
+            <span className="bg-brand-primary text-white text-[8px] sm:text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.2 sm:px-2 sm:py-0.5 rounded-full shadow-xs">
               Save {discount}%
             </span>
           )}
@@ -76,18 +76,18 @@ export default function ProductCard({ product }) {
         {/* Wishlist Button */}
         <button
           onClick={handleToggleWishlist}
-          className={`absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center transition-all z-10 ${
+          className={`absolute top-2 right-2 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all z-10 ${
             isWishlisted
               ? 'bg-brand-primary text-white shadow-md'
               : 'bg-white/80 hover:bg-white text-brand-dark hover:text-brand-primary backdrop-blur-xs shadow-xs'
           }`}
           title={isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
         >
-          <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : 'stroke-[1.8]'}`} />
+          <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isWishlisted ? 'fill-current' : 'stroke-[1.8]'}`} />
         </button>
 
-        {/* Hover Action Overlay */}
-        <div className="absolute inset-x-2.5 bottom-2.5 z-10 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+        {/* Hover Action Overlay (Desktop Only - hidden on mobile so it doesn't obstruct tap) */}
+        <div className="hidden sm:flex absolute inset-x-2.5 bottom-2.5 z-10 flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
           {/* Glass Size Selector Bar */}
           <div className="glass-card rounded-xl p-2 shadow-lg" onClick={(e) => e.stopPropagation()}>
             <div className="flex items-center justify-between text-[9px] font-bold text-brand-muted uppercase tracking-wider mb-1.5 px-1">
@@ -158,40 +158,40 @@ export default function ProductCard({ product }) {
       </div>
 
       {/* Card Info Box */}
-      <div className="p-4 flex flex-col flex-1">
-        <div className="flex items-center justify-between text-[11px] text-brand-muted mb-1">
-          <span className="uppercase tracking-widest font-semibold text-[10px] text-brand-primary">
+      <div className="p-2.5 sm:p-4 flex flex-col flex-1">
+        <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-brand-muted mb-1">
+          <span className="uppercase tracking-widest font-semibold text-[9px] sm:text-[10px] text-brand-primary truncate max-w-[90px] sm:max-w-none">
             {product.category}
           </span>
-          <div className="flex items-center gap-1 text-amber-500 font-semibold text-xs">
-            <Star className="w-3 h-3 fill-current" />
+          <div className="flex items-center gap-1 text-amber-500 font-semibold text-[10px] sm:text-xs shrink-0">
+            <Star className="w-2.5 h-2.5 sm:w-3 sm:h-3 fill-current" />
             <span>{product.rating || 4.9}</span>
           </div>
         </div>
 
-        <h4 className="font-serif text-base font-normal text-brand-dark group-hover:text-brand-primary transition-colors line-clamp-1 mb-1">
+        <h4 className="font-serif text-xs sm:text-base font-normal text-brand-dark group-hover:text-brand-primary transition-colors line-clamp-1 mb-0.5 sm:mb-1">
           {product.name}
         </h4>
 
-        <p className="text-[11px] text-brand-muted/80 font-light truncate mb-3">
+        <p className="text-[10px] sm:text-[11px] text-brand-muted/80 font-light truncate mb-2 sm:mb-3">
           {product.craft} &bull; {product.fabric}
         </p>
 
         {/* Pricing Row */}
-        <div className="mt-auto pt-2 flex items-baseline justify-between border-t border-brand-border/40">
-          <div className="flex items-baseline gap-2">
-            <span className="text-base font-bold text-brand-dark font-sans">
+        <div className="mt-auto pt-1.5 sm:pt-2 flex items-baseline justify-between border-t border-brand-border/40">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-xs sm:text-base font-bold text-brand-dark font-sans">
               ₹{product.price.toLocaleString('en-IN')}
             </span>
             {product.originalPrice && product.originalPrice > product.price && (
-              <span className="text-xs text-brand-muted line-through">
+              <span className="text-[10px] sm:text-xs text-brand-muted line-through">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             )}
           </div>
 
-          <span className="text-[10px] text-brand-primary font-semibold hover:underline">
-            View Details &rarr;
+          <span className="text-[9px] sm:text-[10px] text-brand-primary font-semibold hover:underline hidden xs:inline sm:inline">
+            View &rarr;
           </span>
         </div>
       </div>

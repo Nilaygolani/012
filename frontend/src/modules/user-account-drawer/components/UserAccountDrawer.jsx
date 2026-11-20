@@ -136,22 +136,22 @@ export default function UserAccountDrawer() {
         <div className="w-screen max-w-xl bg-white shadow-2xl flex flex-col z-10 animate-slideLeft">
           
           {/* Header */}
-          <div className="p-4 sm:p-5 border-b border-brand-border flex items-center justify-between bg-brand-bg/60">
+          <div className="p-3.5 sm:p-5 border-b border-brand-border flex items-center justify-between bg-brand-bg/60">
             <div>
               <div className="inline-flex items-center gap-1.5 text-[10px] uppercase font-bold tracking-[0.2em] text-brand-primary">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Patron Concierge</span>
               </div>
-              <h3 className="font-serif text-lg sm:text-xl font-normal text-brand-dark mt-0.5">
+              <h3 className="font-serif text-base sm:text-xl font-normal text-brand-dark mt-0.5">
                 My Nailmores Account
               </h3>
-              <p className="text-[11px] text-brand-muted">
+              <p className="text-[10px] sm:text-[11px] text-brand-muted truncate max-w-[240px] sm:max-w-none">
                 Signed in as <strong className="text-brand-dark">{user?.name}</strong> ({user?.email})
               </p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-2 text-brand-dark/70 hover:text-brand-dark rounded-full hover:bg-brand-sand/50 transition-colors"
+              className="p-1.5 sm:p-2 text-brand-dark/70 hover:text-brand-dark rounded-full hover:bg-brand-sand/50 transition-colors"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -164,11 +164,11 @@ export default function UserAccountDrawer() {
               3. Tracking ID
               4. My Reviews
           */}
-          <div className="flex border-b border-brand-border bg-brand-bg/30 text-xs font-semibold uppercase tracking-wider overflow-x-auto no-scrollbar">
+          <div className="flex border-b border-brand-border bg-brand-bg/30 text-[11px] sm:text-xs font-semibold uppercase tracking-wider overflow-x-auto no-scrollbar">
             {/* 1. Profile */}
             <button
               onClick={() => setActiveTab('profile')}
-              className={`flex-1 py-3.5 px-3 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
+              className={`shrink-0 py-3 sm:py-3.5 px-3 sm:px-4 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
                 activeTab === 'profile'
                   ? 'border-brand-primary text-brand-primary bg-white'
                   : 'border-transparent text-brand-muted hover:text-brand-dark'
@@ -184,7 +184,7 @@ export default function UserAccountDrawer() {
                 setActiveTab('orders');
                 fetchUserOrders();
               }}
-              className={`flex-1 py-3.5 px-3 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
+              className={`shrink-0 py-3 sm:py-3.5 px-3 sm:px-4 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
                 activeTab === 'orders'
                   ? 'border-brand-primary text-brand-primary bg-white'
                   : 'border-transparent text-brand-muted hover:text-brand-dark'
@@ -197,7 +197,7 @@ export default function UserAccountDrawer() {
             {/* 3. Tracking ID */}
             <button
               onClick={() => setActiveTab('tracking')}
-              className={`flex-1 py-3.5 px-3 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
+              className={`shrink-0 py-3 sm:py-3.5 px-3 sm:px-4 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
                 activeTab === 'tracking'
                   ? 'border-brand-primary text-brand-primary bg-white'
                   : 'border-transparent text-brand-muted hover:text-brand-dark'
@@ -213,7 +213,7 @@ export default function UserAccountDrawer() {
                 setActiveTab('reviews');
                 fetchUserReviews();
               }}
-              className={`flex-1 py-3.5 px-3 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
+              className={`shrink-0 py-3 sm:py-3.5 px-3 sm:px-4 text-center transition-colors border-b-2 whitespace-nowrap flex items-center justify-center gap-1.5 ${
                 activeTab === 'reviews'
                   ? 'border-brand-primary text-brand-primary bg-white'
                   : 'border-transparent text-brand-muted hover:text-brand-dark'
@@ -225,7 +225,7 @@ export default function UserAccountDrawer() {
           </div>
 
           {/* Tab Panels */}
-          <div className="flex-1 overflow-y-auto p-5 sm:p-6">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6">
             
             {/* ============================================================== */}
             {/* TAB 1: MY PROFILE (PAHEL PROFILE) */}

@@ -70,13 +70,13 @@ export default function HeaderNavigation() {
             : 'bg-brand-bg/90 backdrop-blur-md py-4 border-b border-brand-border/40'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Left: Mobile Toggle & Search */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 sm:gap-3">
               <button
                 onClick={() => setMobileMenuOpen(true)}
-                className="lg:hidden p-2 text-brand-dark hover:text-brand-primary -ml-2 rounded-full hover:bg-white/80 transition-colors"
+                className="lg:hidden p-1.5 sm:p-2 text-brand-dark hover:text-brand-primary -ml-1 sm:-ml-2 rounded-full hover:bg-white/80 transition-colors"
                 aria-label="Open menu"
               >
                 <Menu className="w-5 h-5" />
@@ -93,17 +93,18 @@ export default function HeaderNavigation() {
             </div>
 
             {/* Center: Brand Logo */}
-            <div className="flex-1 lg:flex-initial text-center lg:text-left">
+            <div className="flex-1 lg:flex-initial text-center lg:text-left px-1">
               <div onClick={handleLogoClick} className="inline-block cursor-pointer">
                 <Logo size="md" showTagline={!isScrolled} />
               </div>
             </div>
 
             {/* Right: Actions Cluster (User Profile / Sign In, Wishlist, Bag) */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center gap-1 sm:gap-2 shrink-0">
               <button
                 onClick={() => eventBus.emit(EVENTS.OPEN_SEARCH)}
-                className="sm:hidden p-2 text-brand-dark hover:text-brand-primary rounded-full hover:bg-white/80"
+                className="sm:hidden p-1.5 text-brand-dark hover:text-brand-primary rounded-full hover:bg-white/80 transition-colors"
+                aria-label="Search"
               >
                 <Search className="w-4 h-4" />
               </button>
@@ -112,7 +113,7 @@ export default function HeaderNavigation() {
               <div className="relative">
                 <button
                   onClick={handleUserButtonClick}
-                  className="flex items-center gap-1.5 p-1.5 sm:px-3 sm:py-1.5 rounded-full hover:bg-white border border-transparent hover:border-brand-border/70 text-brand-dark hover:text-brand-primary transition-all text-xs"
+                  className="flex items-center gap-1.5 p-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-white border border-transparent hover:border-brand-border/70 text-brand-dark hover:text-brand-primary transition-all text-xs"
                   title={user ? (user.role === 'admin' ? 'Admin Menu' : 'My Account & Orders') : 'Sign In'}
                 >
                   <div className="w-7 h-7 rounded-full bg-brand-sand/60 flex items-center justify-center text-brand-dark border border-brand-border">
@@ -177,10 +178,10 @@ export default function HeaderNavigation() {
               {/* Wishlist Button */}
               <button
                 onClick={() => eventBus.emit(EVENTS.OPEN_WISHLIST)}
-                className="w-9 h-9 rounded-full bg-white/70 hover:bg-white border border-brand-border/70 flex items-center justify-center text-brand-dark hover:text-brand-primary transition-all relative"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/70 hover:bg-white border border-brand-border/70 flex items-center justify-center text-brand-dark hover:text-brand-primary transition-all relative shrink-0"
                 title="Wishlist"
               >
-                <Heart className="w-4 h-4 stroke-[1.8]" />
+                <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.8]" />
                 {wishlistCount > 0 && (
                   <span className="absolute -top-1 -right-1 w-4 h-4 bg-brand-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-xs">
                     {wishlistCount}
@@ -191,10 +192,10 @@ export default function HeaderNavigation() {
               {/* Shopping Bag Button */}
               <button
                 onClick={() => eventBus.emit(EVENTS.OPEN_CART)}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-dark hover:bg-brand-primary text-white transition-all duration-300 shadow-md group"
+                className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-brand-dark hover:bg-brand-primary text-white transition-all duration-300 shadow-md group shrink-0"
                 title="Shopping Bag"
               >
-                <ShoppingBag className="w-4 h-4 text-brand-sand" />
+                <ShoppingBag className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-sand" />
                 <span className="text-xs font-semibold tracking-wider font-mono">
                   {cartCount}
                 </span>

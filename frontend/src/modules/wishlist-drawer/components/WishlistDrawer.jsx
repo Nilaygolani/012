@@ -33,10 +33,10 @@ export default function WishlistDrawer() {
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
         <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col z-10 animate-slideLeft">
-          <div className="p-4 sm:p-5 border-b border-brand-border flex items-center justify-between bg-brand-bg/60">
+          <div className="p-3.5 sm:p-5 border-b border-brand-border flex items-center justify-between bg-brand-bg/60">
             <div className="flex items-center gap-2">
-              <Heart className="w-5 h-5 text-brand-primary fill-current" />
-              <h3 className="font-serif text-lg font-semibold text-brand-dark uppercase tracking-wider">
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary fill-current" />
+              <h3 className="font-serif text-base sm:text-lg font-semibold text-brand-dark uppercase tracking-wider">
                 My Wishlist ({items.length})
               </h3>
             </div>
@@ -48,7 +48,7 @@ export default function WishlistDrawer() {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-5 space-y-4">
+          <div className="flex-1 overflow-y-auto p-3.5 sm:p-5 space-y-3 sm:space-y-4">
             {items.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3">
                 <div className="w-16 h-16 rounded-full bg-brand-sand/60 text-brand-muted flex items-center justify-center">

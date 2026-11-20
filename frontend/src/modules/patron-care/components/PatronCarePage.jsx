@@ -138,13 +138,13 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
       </div>
 
       {/* Hero Header */}
-      <div className="bg-white border-b border-brand-border/60 py-8 sm:py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center space-y-3">
+      <div className="bg-white border-b border-brand-border/60 py-6 sm:py-12">
+        <div className="max-w-4xl mx-auto px-4 text-center space-y-2 sm:space-y-3">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sand text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em]">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Atelier Guarantee & Care</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-normal text-brand-dark">
+          <h1 className="font-serif text-2xl sm:text-5xl font-normal text-brand-dark">
             nailmores Patron Concierge
           </h1>
           <p className="text-xs sm:text-sm text-brand-muted max-w-xl mx-auto font-light leading-relaxed">
@@ -154,11 +154,11 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
       </div>
 
       {/* Floating Category Navigation Tabs */}
-      <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-b border-brand-border shadow-xs">
-        <div className="max-w-5xl mx-auto px-4 flex items-center justify-center gap-2 sm:gap-4 overflow-x-auto no-scrollbar py-3">
+      <div className="sticky top-14 sm:top-16 z-30 bg-white/95 backdrop-blur-md border-b border-brand-border shadow-xs">
+        <div className="max-w-5xl mx-auto px-2 sm:px-4 flex items-center justify-start sm:justify-center gap-1.5 sm:gap-4 overflow-x-auto no-scrollbar py-2.5 sm:py-3">
           <button
             onClick={() => setActiveTab('tracking')}
-            className={`px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2 ${
+            className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 sm:gap-2 ${
               activeTab === 'tracking'
                 ? 'bg-brand-primary text-white shadow-md'
                 : 'bg-brand-sand/40 hover:bg-brand-sand text-brand-dark'
@@ -170,7 +170,7 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
 
           <button
             onClick={() => setActiveTab('exchange')}
-            className={`px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2 ${
+            className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 sm:gap-2 ${
               activeTab === 'exchange'
                 ? 'bg-brand-primary text-white shadow-md'
                 : 'bg-brand-sand/40 hover:bg-brand-sand text-brand-dark'
@@ -182,7 +182,7 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
 
           <button
             onClick={() => setActiveTab('shipping')}
-            className={`px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2 ${
+            className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 sm:gap-2 ${
               activeTab === 'shipping'
                 ? 'bg-brand-primary text-white shadow-md'
                 : 'bg-brand-sand/40 hover:bg-brand-sand text-brand-dark'
@@ -194,7 +194,7 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
 
           <button
             onClick={() => setActiveTab('sizing')}
-            className={`px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-2 ${
+            className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 sm:gap-2 ${
               activeTab === 'sizing'
                 ? 'bg-brand-primary text-white shadow-md'
                 : 'bg-brand-sand/40 hover:bg-brand-sand text-brand-dark'

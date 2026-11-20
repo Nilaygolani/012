@@ -115,11 +115,11 @@ export default function InstagramReels() {
   const activeReel = activeReelIndex !== null ? reels[activeReelIndex] : null;
 
   return (
-    <section className="py-16 sm:py-24 bg-brand-bg relative select-none">
+    <section className="py-12 sm:py-24 bg-brand-bg relative select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with Scroll Controls */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.25em] font-bold text-brand-primary mb-2">
               <Instagram className="w-3.5 h-3.5" />
@@ -133,8 +133,8 @@ export default function InstagramReels() {
             </p>
           </div>
 
-          {/* Left / Right Carousel Controls */}
-          <div className="flex items-center gap-2 self-start sm:self-end">
+          {/* Left / Right Carousel Controls (Hidden on mobile for native touch swiping) */}
+          <div className="hidden sm:flex items-center gap-2 self-start sm:self-end">
             <span className="text-[11px] text-brand-muted hidden md:inline font-mono mr-2">
               Scroll video drops &rarr;
             </span>
@@ -171,13 +171,13 @@ export default function InstagramReels() {
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex gap-3 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-3 sm:pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {reels.map((reel, idx) => (
             <div
               key={reel.id}
               onClick={() => openReelModal(idx)}
-              className="group relative shrink-0 w-[220px] sm:w-[260px] aspect-[9/16] rounded-3xl snap-start overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer bg-brand-dark border border-brand-border/80 hover:border-brand-primary/60 hover:-translate-y-1"
+              className="group relative shrink-0 w-[180px] sm:w-[260px] aspect-[9/16] rounded-2xl sm:rounded-3xl snap-start overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer bg-brand-dark border border-brand-border/80 hover:border-brand-primary/60 hover:-translate-y-1"
             >
               <img
                 src={reel.coverImage}
@@ -192,20 +192,20 @@ export default function InstagramReels() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent pointer-events-none" />
 
               {/* Glowing Play Badge */}
-              <div className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-white/25 backdrop-blur-md flex items-center justify-center text-white group-hover:scale-115 group-hover:bg-brand-primary transition-all duration-300 shadow-md">
-                <Play className="w-4 h-4 fill-current ml-0.5" />
+              <div className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/25 backdrop-blur-md flex items-center justify-center text-white group-hover:scale-115 group-hover:bg-brand-primary transition-all duration-300 shadow-md">
+                <Play className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current ml-0.5" />
               </div>
 
               {/* Top Reel Counter */}
-              <div className="absolute top-3.5 left-3.5">
-                <span className="px-2.5 py-1 rounded-full text-[9px] uppercase tracking-wider font-bold bg-black/40 text-brand-sand backdrop-blur-xs border border-white/10">
+              <div className="absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5">
+                <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[8px] sm:text-[9px] uppercase tracking-wider font-bold bg-black/40 text-brand-sand backdrop-blur-xs border border-white/10">
                   Video Drop
                 </span>
               </div>
 
               {/* Caption, Views & Tagged Product */}
-              <div className="absolute inset-x-3.5 bottom-3.5 text-white">
-                <div className="flex items-center justify-between text-[10px] text-brand-gold font-bold mb-1.5">
+              <div className="absolute inset-x-2.5 bottom-2.5 sm:inset-x-3.5 sm:bottom-3.5 text-white">
+                <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-brand-gold font-bold mb-1 sm:mb-1.5">
                   <div className="flex items-center gap-1">
                     <Eye className="w-3 h-3" />
                     <span>{reel.views} Views</span>
@@ -218,7 +218,7 @@ export default function InstagramReels() {
                   )}
                 </div>
 
-                <p className="text-xs font-normal leading-snug line-clamp-2 mb-2.5 font-serif">
+                <p className="text-[11px] sm:text-xs font-normal leading-snug line-clamp-2 mb-2 sm:mb-2.5 font-serif">
                   {reel.title}
                 </p>
 
@@ -228,18 +228,18 @@ export default function InstagramReels() {
                     e.stopPropagation();
                     handleViewProduct(reel.productId);
                   }}
-                  className="flex items-center justify-between p-2 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 hover:bg-brand-primary hover:border-transparent transition-colors cursor-pointer"
+                  className="flex items-center justify-between p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-white/15 backdrop-blur-md border border-white/20 hover:bg-brand-primary hover:border-transparent transition-colors cursor-pointer"
                   title="View Tagged Silhouette"
                 >
                   <div className="truncate mr-2">
-                    <span className="text-[10px] uppercase font-bold block truncate text-white">
+                    <span className="text-[9px] sm:text-[10px] uppercase font-bold block truncate text-white">
                       {reel.productName || 'Tagged Kurti'}
                     </span>
-                    <span className="text-[10px] text-brand-sand/90 font-mono">
+                    <span className="text-[9px] sm:text-[10px] text-brand-sand/90 font-mono">
                       ₹{reel.productPrice?.toLocaleString('en-IN')}
                     </span>
                   </div>
-                  <ShoppingBag className="w-3.5 h-3.5 shrink-0 text-white" />
+                  <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-white" />
                 </div>
               </div>
             </div>

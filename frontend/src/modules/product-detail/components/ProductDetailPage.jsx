@@ -217,11 +217,11 @@ export default function ProductDetailPage({ productId, onBack }) {
   };
 
   return (
-    <div className="bg-brand-bg min-h-screen py-8 animate-fadeIn">
+    <div className="bg-brand-bg min-h-screen py-4 sm:py-8 animate-fadeIn">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Breadcrumb & Back Navigation */}
-        <div className="flex items-center justify-between pb-6 mb-8 border-b border-brand-border/60 text-xs">
+        <div className="flex items-center justify-between pb-4 mb-6 sm:pb-6 sm:mb-8 border-b border-brand-border/60 text-xs">
           <button
             onClick={onBack}
             className="inline-flex items-center gap-2 font-semibold text-brand-dark hover:text-brand-primary transition-colors py-1.5 px-3 rounded-full hover:bg-brand-sand/50"
@@ -240,21 +240,21 @@ export default function ProductDetailPage({ productId, onBack }) {
         </div>
 
         {/* Product Core Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 lg:gap-14 mb-12 sm:mb-20">
           
           {/* Left Column: Vertical Thumbnails + Main Photo Gallery (Swipeable) */}
-          <div className="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-4">
+          <div className="lg:col-span-7 flex flex-col-reverse sm:flex-row gap-3 sm:gap-4">
             {/* Dynamic Thumbnails list (Multiple Images) */}
             {galleryImages.length > 1 && (
               <div
                 ref={thumbnailStripRef}
-                className="flex sm:flex-col gap-2.5 shrink-0 overflow-x-auto sm:overflow-y-auto no-scrollbar max-h-[580px] pb-2 sm:pb-0"
+                className="flex sm:flex-col gap-2 sm:gap-2.5 shrink-0 overflow-x-auto sm:overflow-y-auto no-scrollbar max-h-[580px] pb-2 sm:pb-0"
               >
                 {galleryImages.map((imgUrl, idx) => (
                   <button
                     key={idx}
                     onClick={() => scrollToImageIndex(idx)}
-                    className={`w-16 h-20 sm:w-20 sm:h-24 rounded-2xl overflow-hidden border-2 transition-all shrink-0 relative group ${
+                    className={`w-14 h-18 sm:w-20 sm:h-24 rounded-xl sm:rounded-2xl overflow-hidden border-2 transition-all shrink-0 relative group ${
                       activeImageIndex === idx
                         ? 'border-brand-primary shadow-lg ring-2 ring-brand-primary/20 scale-102'
                         : 'border-brand-border/60 opacity-70 hover:opacity-100 hover:border-brand-dark'
@@ -271,7 +271,7 @@ export default function ProductDetailPage({ productId, onBack }) {
             )}
 
             {/* Main High-Res Image Frame with Native Finger Swipe & Horizontal Scroll */}
-            <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden bg-white shadow-xl border border-brand-border/80 group">
+            <div className="relative aspect-[3/4] w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white shadow-xl border border-brand-border/80 group">
               {/* Swipeable / Scrollable Images Container */}
               <div
                 ref={mainGalleryRef}
@@ -394,22 +394,22 @@ export default function ProductDetailPage({ productId, onBack }) {
               </div>
 
               {/* Title */}
-              <h1 className="font-serif text-3xl sm:text-4xl font-normal text-brand-dark leading-tight mb-3">
+              <h1 className="font-serif text-2xl sm:text-4xl font-normal text-brand-dark leading-tight mb-2 sm:mb-3">
                 {product.name}
               </h1>
 
               {/* Price Details */}
-              <div className="flex items-baseline gap-3 pb-4 mb-4 border-b border-brand-border/60">
-                <span className="text-3xl font-bold text-brand-dark font-sans">
+              <div className="flex items-baseline gap-2.5 sm:gap-3 pb-3 sm:pb-4 mb-3 sm:mb-4 border-b border-brand-border/60">
+                <span className="text-2xl sm:text-3xl font-bold text-brand-dark font-sans">
                   ₹{product.price.toLocaleString('en-IN')}
                 </span>
                 {product.originalPrice && product.originalPrice > product.price && (
-                  <span className="text-base text-brand-muted line-through font-sans">
+                  <span className="text-sm sm:text-base text-brand-muted line-through font-sans">
                     ₹{product.originalPrice.toLocaleString('en-IN')}
                   </span>
                 )}
                 {discount > 0 && (
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                  <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 sm:px-2.5 py-0.5 rounded-full">
                     Save {discount}%
                   </span>
                 )}
@@ -563,12 +563,12 @@ export default function ProductDetailPage({ productId, onBack }) {
                 </div>
 
               {/* Value Assurance Badges */}
-              <div className="grid grid-cols-2 gap-3 mt-6 pt-6 border-t border-brand-border/60 text-[11px] text-brand-dark font-medium">
-                <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-brand-border/60">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-brand-border/60 text-[10px] sm:text-[11px] text-brand-dark font-medium">
+                <div className="flex items-center gap-2 p-2 sm:p-2.5 rounded-xl bg-white border border-brand-border/60">
                   <Truck className="w-4 h-4 text-brand-primary shrink-0" />
                   <span>100% Free Express Delivery on All Orders</span>
                 </div>
-                <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-brand-border/60">
+                <div className="flex items-center gap-2 p-2 sm:p-2.5 rounded-xl bg-white border border-brand-border/60">
                   <RefreshCw className="w-4 h-4 text-brand-primary shrink-0" />
                   <span>7-Day Doorstep Size Exchange Guarantee</span>
                 </div>

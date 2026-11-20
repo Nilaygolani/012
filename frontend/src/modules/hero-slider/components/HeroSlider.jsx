@@ -41,37 +41,37 @@ export default function HeroSlider() {
   const current = heroDrops[activeTab];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-sand/30 via-brand-bg to-brand-bg pt-6 pb-16 lg:pt-10 lg:pb-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-brand-sand/30 via-brand-bg to-brand-bg pt-4 pb-12 sm:pt-6 sm:pb-16 lg:pt-10 lg:pb-24">
       {/* Subtle Luxury Ambient Glow */}
       <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-80 h-80 bg-brand-gold/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           
           {/* Left: Magazine Typography & CTAs */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-border/80 shadow-2xs">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white border border-brand-border/80 shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-brand-primary animate-ping"></span>
-              <span className="text-[10px] uppercase tracking-[0.24em] font-semibold text-brand-dark">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.24em] font-semibold text-brand-dark">
                 {current.badge}
               </span>
               <span className="text-brand-gold font-serif italic text-xs">&mdash; Privé Collection</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] tracking-tight text-brand-dark">
+            <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl font-normal leading-[1.12] sm:leading-[1.08] tracking-tight text-brand-dark">
               Grace woven into <span className="italic font-light text-brand-primary">modern poetry.</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-brand-muted leading-relaxed font-light max-w-lg">
+            <p className="text-xs sm:text-base text-brand-muted leading-relaxed font-light max-w-lg">
               {current.description}
             </p>
 
             {/* CTAs & Micro Trust Pill */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4">
               <a
                 href="#catalog"
-                className="inline-flex items-center gap-2 bg-brand-dark hover:bg-brand-primary text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-300 shadow-md hover:shadow-xl hover:translate-x-0.5 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-dark hover:bg-brand-primary text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] transition-all duration-300 shadow-md hover:shadow-xl hover:translate-x-0.5 group text-center"
               >
                 <span>{current.cta}</span>
                 <ArrowRight className="w-4 h-4 text-brand-gold group-hover:translate-x-1 transition-transform" />
@@ -79,14 +79,14 @@ export default function HeroSlider() {
 
               <a
                 href="#lookbook"
-                className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white hover:bg-brand-sand/50 border border-brand-border text-brand-dark text-xs font-semibold uppercase tracking-[0.16em] transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-6 sm:py-4 rounded-full bg-white hover:bg-brand-sand/50 border border-brand-border text-brand-dark text-xs font-semibold uppercase tracking-[0.16em] transition-all text-center"
               >
                 <span>Runway Lookbook</span>
               </a>
             </div>
 
             {/* Social Proof Bar */}
-            <div className="pt-4 flex items-center gap-6 border-t border-brand-border/60">
+            <div className="pt-3 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-6 border-t border-brand-border/60 text-[10px] sm:text-[11px]">
               <div className="flex items-center gap-1.5">
                 <div className="flex text-amber-500">
                   {[...Array(5)].map((_, i) => (
@@ -94,10 +94,10 @@ export default function HeroSlider() {
                   ))}
                 </div>
                 <span className="text-xs font-bold text-brand-dark">4.9/5</span>
-                <span className="text-[11px] text-brand-muted">(2,400+ reviews)</span>
+                <span className="text-[10px] sm:text-[11px] text-brand-muted">(2,400+ reviews)</span>
               </div>
-              <span className="w-1 h-1 rounded-full bg-brand-border"></span>
-              <div className="flex items-center gap-1 text-[11px] text-brand-muted">
+              <span className="hidden sm:inline w-1 h-1 rounded-full bg-brand-border"></span>
+              <div className="flex items-center gap-1 text-brand-muted">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                 <span>100% Verified Jaipur Silk & Cotton</span>
               </div>
@@ -105,17 +105,17 @@ export default function HeroSlider() {
           </div>
 
           {/* Right: Architectural Image Frame with Floating Glass Card */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <div className="lg:col-span-6 relative mt-4 lg:mt-0">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 sm:border-4 border-white">
               <img
                 src={current.heroImage}
                 alt={current.title}
                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-1000 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
               {/* Bottom Caption Overlay */}
-              <div className="absolute bottom-6 left-6 right-6 text-white">
+              <div className="hidden sm:block absolute bottom-6 left-6 right-6 text-white pointer-events-none">
                 <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold">
                   {current.subtitle}
                 </span>
@@ -126,7 +126,7 @@ export default function HeroSlider() {
             </div>
 
             {/* Floating Glassmorphic Product Card */}
-            <div className="absolute left-3 bottom-3 sm:-bottom-8 sm:-left-8 glass-card p-2.5 sm:p-3.5 rounded-2xl shadow-2xl flex items-center gap-2.5 sm:gap-3.5 max-w-[280px] sm:max-w-xs backdrop-blur-md bg-white/95 border border-white/80 animate-fadeIn hover:scale-105 transition-transform cursor-pointer"
+            <div className="absolute left-2.5 bottom-2.5 sm:-bottom-8 sm:-left-8 glass-card p-2 sm:p-3.5 rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl flex items-center gap-2.5 sm:gap-3.5 max-w-[calc(100%-1.25rem)] sm:max-w-xs backdrop-blur-md bg-white/95 border border-white/80 animate-fadeIn hover:scale-105 transition-transform cursor-pointer"
                  onClick={() => {
                    eventBus.emit(EVENTS.VIEW_PRODUCT_DETAIL, current.featuredProduct.id);
                  }}
@@ -134,14 +134,14 @@ export default function HeroSlider() {
               <img
                 src={current.featuredProduct.image}
                 alt={current.featuredProduct.name}
-                className="w-12 h-14 sm:w-14 sm:h-16 object-cover rounded-xl bg-brand-sand shrink-0 shadow-xs"
+                className="w-11 h-13 sm:w-14 sm:h-16 object-cover rounded-lg sm:rounded-xl bg-brand-sand shrink-0 shadow-xs"
               />
-              <div className="text-xs">
-                <div className="flex items-center gap-1 text-amber-500 text-[10px] font-bold">
-                  <Star className="w-3 h-3 fill-current" />
-                  <span>{current.featuredProduct.rating} Bestseller</span>
+              <div className="text-xs min-w-0 flex-1">
+                <div className="flex items-center gap-1 text-amber-500 text-[9px] sm:text-[10px] font-bold">
+                  <Star className="w-3 h-3 fill-current shrink-0" />
+                  <span className="truncate">{current.featuredProduct.rating} Bestseller</span>
                 </div>
-                <h5 className="font-serif font-medium text-brand-dark line-clamp-1 mt-0.5 text-xs sm:text-sm">
+                <h5 className="font-serif font-medium text-brand-dark truncate mt-0.5 text-xs sm:text-sm">
                   {current.featuredProduct.name}
                 </h5>
                 <span className="text-xs sm:text-sm font-bold text-brand-primary font-sans">
@@ -151,13 +151,13 @@ export default function HeroSlider() {
             </div>
 
             {/* Floating Switch Tabs */}
-            <div className="absolute top-4 right-4 flex gap-1.5 glass-card p-1.5 rounded-full">
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex gap-1.5 glass-card p-1 sm:p-1.5 rounded-full">
               {heroDrops.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveTab(i)}
-                  className={`h-2 transition-all rounded-full ${
-                    i === activeTab ? 'w-6 bg-brand-primary' : 'w-2 bg-brand-dark/30 hover:bg-brand-dark/60'
+                  className={`h-1.5 sm:h-2 transition-all rounded-full ${
+                    i === activeTab ? 'w-5 sm:w-6 bg-brand-primary' : 'w-1.5 sm:w-2 bg-brand-dark/30 hover:bg-brand-dark/60'
                   }`}
                   aria-label={`Switch to drop ${i + 1}`}
                 />

@@ -143,11 +143,11 @@ export default function CategoryPills() {
   };
 
   return (
-    <section className="py-14 sm:py-20 bg-white border-y border-brand-border/60 relative select-none">
+    <section className="py-10 sm:py-20 bg-white border-y border-brand-border/60 relative select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Left/Right Navigation Arrows */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sand text-brand-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
               <Sparkles className="w-3 h-3" />
@@ -161,8 +161,8 @@ export default function CategoryPills() {
             </p>
           </div>
 
-          {/* Left / Right Carousel Action Controls */}
-          <div className="flex items-center gap-2 self-start sm:self-end">
+          {/* Left / Right Carousel Action Controls (hidden on mobile for clean touch swipe) */}
+          <div className="hidden sm:flex items-center gap-2 self-start sm:self-end">
             <span className="text-[11px] text-brand-muted hidden md:inline font-mono mr-2">
               Swipe or use controls &rarr;
             </span>
@@ -199,13 +199,13 @@ export default function CategoryPills() {
         <div
           ref={scrollRef}
           onScroll={checkScroll}
-          className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0"
+          className="flex gap-3.5 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-3 sm:pb-4 pt-1 -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {categories.map((cat) => (
             <div
               key={cat.id}
               onClick={() => handleSelect(cat.name)}
-              className="group relative cursor-pointer flex flex-col shrink-0 w-[240px] sm:w-[280px] snap-start overflow-hidden rounded-3xl bg-brand-sand/30 border border-brand-border/80 hover:border-brand-primary/50 transition-all duration-500 shadow-2xs hover:shadow-xl hover:-translate-y-1"
+              className="group relative cursor-pointer flex flex-col shrink-0 w-[200px] sm:w-[280px] snap-start overflow-hidden rounded-2xl sm:rounded-3xl bg-brand-sand/30 border border-brand-border/80 hover:border-brand-primary/50 transition-all duration-500 shadow-2xs hover:shadow-xl hover:-translate-y-1"
             >
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-brand-sand">
                 <img
@@ -217,26 +217,26 @@ export default function CategoryPills() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-75 transition-opacity" />
 
                 {/* Top Badge Tag */}
-                <div className="absolute top-3.5 left-3.5 flex items-center gap-1.5">
-                  <span className="px-2.5 py-1 rounded-full text-[9px] uppercase tracking-wider font-bold bg-white/95 text-brand-dark backdrop-blur-md shadow-xs">
+                <div className="absolute top-2.5 left-2.5 sm:top-3.5 sm:left-3.5 flex items-center gap-1.5">
+                  <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[8px] sm:text-[9px] uppercase tracking-wider font-bold bg-white/95 text-brand-dark backdrop-blur-md shadow-xs">
                     {cat.tag}
                   </span>
                 </div>
 
                 {/* Top Right Action Circle */}
-                <div className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:bg-brand-primary transition-all duration-300">
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <div className="absolute top-2.5 right-2.5 sm:top-3.5 sm:right-3.5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-90 group-hover:opacity-100 group-hover:bg-brand-primary transition-all duration-300">
+                  <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
 
                 {/* Bottom Details */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[10px] uppercase font-bold text-brand-gold tracking-widest block mb-0.5">
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                  <span className="text-[9px] sm:text-[10px] uppercase font-bold text-brand-gold tracking-widest block mb-0.5">
                     {cat.count}
                   </span>
-                  <h4 className="font-serif text-xl sm:text-2xl font-normal leading-tight group-hover:text-brand-gold transition-colors">
+                  <h4 className="font-serif text-lg sm:text-2xl font-normal leading-tight group-hover:text-brand-gold transition-colors">
                     {cat.name}
                   </h4>
-                  <span className="text-xs text-brand-sand/80 font-light block mt-1 line-clamp-1">
+                  <span className="text-[11px] sm:text-xs text-brand-sand/80 font-light block mt-0.5 sm:mt-1 line-clamp-1">
                     {cat.tagline}
                   </span>
                 </div>

@@ -377,12 +377,12 @@ export default function AdminPanel() {
 
         {/* Content Area */}
         <div className="flex-1 flex flex-col h-full overflow-hidden bg-brand-bg/50">
-          <div className="p-4 px-6 bg-white border-b border-brand-border flex items-center justify-between">
+          <div className="p-3 sm:p-4 px-3 sm:px-6 bg-white border-b border-brand-border flex items-center justify-between">
             <span className="text-xs uppercase tracking-wider font-bold text-brand-dark">
               Admin: {activeTab.toUpperCase()}
             </span>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 onClick={fetchAllAdminData}
                 className="p-1.5 text-brand-muted hover:text-brand-dark rounded-full hover:bg-brand-sand/40"
@@ -399,7 +399,7 @@ export default function AdminPanel() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-auto p-3.5 sm:p-6">
             {/* 1. DASHBOARD */}
             {activeTab === 'dashboard' && (
               <div className="space-y-6">

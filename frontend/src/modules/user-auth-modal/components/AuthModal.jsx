@@ -43,29 +43,29 @@ export default function AuthModal() {
     <div className="fixed inset-0 z-50 overflow-hidden flex items-center justify-center p-4">
       <div className="fixed inset-0 bg-black/70 backdrop-blur-xs transition-opacity" onClick={() => setIsOpen(false)} />
 
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden z-10 animate-scaleUp border border-brand-border">
+      <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl max-w-md w-full overflow-hidden z-10 animate-scaleUp border border-brand-border">
         <button
           onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 p-1.5 text-brand-dark/70 hover:text-brand-dark rounded-full hover:bg-brand-sand/40 transition-colors"
+          className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-1.5 text-brand-dark/70 hover:text-brand-dark rounded-full hover:bg-brand-sand/40 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="p-7 bg-brand-bg/60 border-b border-brand-border text-center">
+        <div className="p-5 sm:p-7 bg-brand-bg/60 border-b border-brand-border text-center">
           <Logo size="sm" showTagline={false} />
-          <h3 className="font-serif text-2xl font-normal text-brand-dark mt-2">
+          <h3 className="font-serif text-xl sm:text-2xl font-normal text-brand-dark mt-2">
             {mode === 'login' ? 'Sign In to Your Account' : 'Create Your Account'}
           </h3>
           {pendingAction === 'checkout' && (
-            <div className="mt-2.5 text-xs bg-amber-50 text-amber-800 border border-amber-200 py-1.5 px-3 rounded-full font-medium inline-block">
+            <div className="mt-2.5 text-[11px] sm:text-xs bg-amber-50 text-amber-800 border border-amber-200 py-1 sm:py-1.5 px-3 rounded-full font-medium inline-block">
               Please sign in to proceed with your Razorpay order.
             </div>
           )}
         </div>
 
         {/* Form Body */}
-        <div className="p-7">
+        <div className="p-5 sm:p-7">
           {error && (
             <div className="mb-4 p-3 rounded-xl bg-red-50 text-red-700 text-xs border border-red-200 flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />

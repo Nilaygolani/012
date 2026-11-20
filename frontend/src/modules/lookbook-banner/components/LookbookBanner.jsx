@@ -112,7 +112,7 @@ export default function LookbookBanner() {
   };
 
   return (
-    <section id="lookbook" className="py-16 sm:py-24 luxury-gradient text-white relative overflow-hidden scroll-mt-20">
+    <section id="lookbook" className="py-12 sm:py-24 luxury-gradient text-white relative overflow-hidden scroll-mt-20">
       {/* Background radial ambient highlights */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl pointer-events-none" />
@@ -120,19 +120,19 @@ export default function LookbookBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header & Look Selector Tabs */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-8 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-10 pb-6 sm:pb-8 border-b border-white/10">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-brand-gold text-[10px] uppercase tracking-[0.25em] font-semibold border border-brand-gold/30 mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-brand-gold text-[10px] uppercase tracking-[0.25em] font-semibold border border-brand-gold/30 mb-2 sm:mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Interactive Runway Lookbook</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal leading-[1.12]">
+            <h2 className="font-serif text-2xl sm:text-5xl font-normal leading-[1.15] sm:leading-[1.12]">
               Sculpted for poise, twirled in poetry.
             </h2>
           </div>
 
           {/* Look Switcher Pills (Horizontal scroll on mobile) */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1">
             {looks.map((look, idx) => (
               <button
                 key={look.id}
@@ -140,7 +140,7 @@ export default function LookbookBanner() {
                   setActiveLookIndex(idx);
                   setActivePinId(1);
                 }}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap shrink-0 flex items-center gap-2 ${
+                className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 sm:gap-2 ${
                   activeLookIndex === idx
                     ? 'bg-brand-primary text-white shadow-lg ring-2 ring-brand-gold/40'
                     : 'bg-white/10 hover:bg-white/20 text-brand-sand border border-white/10'
@@ -154,11 +154,11 @@ export default function LookbookBanner() {
         </div>
 
         {/* Lookbook Stage */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           
           {/* Left: Runway Image with Hotspots */}
           <div className="lg:col-span-7">
-            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-brand-dark/40 group">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-brand-dark/40 group">
               <img
                 src={currentLook.image}
                 alt={currentLook.title}
@@ -175,26 +175,26 @@ export default function LookbookBanner() {
                 >
                   <button
                     onClick={() => setActivePinId(pin.id)}
-                    className={`relative w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all ${
+                    className={`relative w-7 h-7 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all ${
                       activePinId === pin.id
-                        ? 'bg-brand-primary text-white scale-110 shadow-2xl ring-4 ring-brand-gold/60'
+                        ? 'bg-brand-primary text-white scale-110 shadow-2xl ring-2 sm:ring-4 ring-brand-gold/60'
                         : 'bg-white/90 hover:bg-white text-brand-dark shadow-lg'
                     }`}
                     aria-label={pin.title}
                   >
                     <span className="absolute inset-0 rounded-full bg-brand-primary/40 animate-ping" />
-                    <Plus className="w-4 h-4 relative z-10 transition-transform hover:rotate-90" />
+                    <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10 transition-transform hover:rotate-90" />
                   </button>
                 </div>
               ))}
 
               {/* Bottom Model Tag & Hint */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-brand-sand/90 bg-black/40 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10">
-                <div className="flex items-center gap-2">
-                  <Compass className="w-3.5 h-3.5 text-brand-gold animate-spin" style={{ animationDuration: '8s' }} />
-                  <span className="text-[11px] font-medium">Tap glowing pins to inspect bespoke tailoring</span>
+              <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-xs text-brand-sand/90 bg-black/40 backdrop-blur-md px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl border border-white/10">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Compass className="w-3.5 h-3.5 text-brand-gold animate-spin shrink-0" style={{ animationDuration: '8s' }} />
+                  <span className="text-[10px] sm:text-[11px] font-medium">Tap glowing pins to inspect bespoke tailoring</span>
                 </div>
-                <span className="text-[10px] uppercase font-bold text-brand-gold tracking-widest hidden sm:inline">
+                <span className="text-[9px] sm:text-[10px] uppercase font-bold text-brand-gold tracking-widest hidden sm:inline">
                   {currentLook.subtitle}
                 </span>
               </div>
@@ -202,53 +202,53 @@ export default function LookbookBanner() {
           </div>
 
           {/* Right: Bespoke Craft Breakdown & Quick Ensemble Buy */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="space-y-2">
-              <span className="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6">
+            <div className="space-y-1.5 sm:space-y-2">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-brand-gold font-bold">
                 {currentLook.subtitle}
               </span>
               <h3 className="font-serif text-2xl sm:text-4xl font-normal leading-tight">
                 {currentLook.title}
               </h3>
-              <p className="text-sm text-brand-sand/80 font-light leading-relaxed pt-1">
+              <p className="text-xs sm:text-sm text-brand-sand/80 font-light leading-relaxed pt-1">
                 {currentLook.description}
               </p>
             </div>
 
             {/* Active Hotspot Macro Detail Card */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md transition-all">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold flex items-center gap-1.5">
+            <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md transition-all">
+              <div className="flex items-center justify-between mb-1.5 sm:mb-2">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-gold font-bold flex items-center gap-1.5">
                   <Layers className="w-3 h-3" />
                   <span>Tailoring Detail #{activeSpot.id}</span>
                 </span>
-                <span className="text-[11px] text-brand-sand/70 font-sans">Handcrafted</span>
+                <span className="text-[10px] sm:text-[11px] text-brand-sand/70 font-sans">Handcrafted</span>
               </div>
-              <h4 className="font-serif text-base sm:text-lg font-medium text-white">
+              <h4 className="font-serif text-sm sm:text-lg font-medium text-white">
                 {activeSpot.title}
               </h4>
-              <p className="text-xs text-brand-sand/80 mt-1 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-brand-sand/80 mt-1 leading-relaxed">
                 {activeSpot.detail}
               </p>
             </div>
 
             {/* Atelier Craft Tags */}
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold block">Fabric</span>
-                <span className="text-brand-sand font-medium text-xs mt-0.5 block">{currentLook.fabric}</span>
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-3 text-xs">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-gold font-bold block">Fabric</span>
+                <span className="text-brand-sand font-medium text-[11px] sm:text-xs mt-0.5 block">{currentLook.fabric}</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                <span className="text-[10px] uppercase tracking-widest text-brand-gold font-bold block">Artisan Craft</span>
-                <span className="text-brand-sand font-medium text-xs mt-0.5 block">{currentLook.craft}</span>
+              <div className="p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-brand-gold font-bold block">Artisan Craft</span>
+                <span className="text-brand-sand font-medium text-[11px] sm:text-xs mt-0.5 block">{currentLook.craft}</span>
               </div>
             </div>
 
             {/* Action Bar: Direct Silhouette Link & Catalog Browse */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
               <button
                 onClick={() => handleOpenProduct(currentLook.productId)}
-                className="flex-1 inline-flex items-center justify-center gap-2 bg-brand-sand hover:bg-white text-brand-dark px-6 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] transition-all shadow-lg hover:shadow-2xl hover:scale-102"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-brand-sand hover:bg-white text-brand-dark px-5 py-3.5 sm:px-6 sm:py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] transition-all shadow-lg hover:shadow-2xl hover:scale-102 text-center"
               >
                 <Eye className="w-4 h-4 text-brand-primary" />
                 <span>View Full Silhouette (₹{currentLook.price.toLocaleString('en-IN')})</span>
@@ -256,7 +256,7 @@ export default function LookbookBanner() {
               
               <a
                 href="#catalog"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-4 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-3 sm:px-6 sm:py-4 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors text-center"
               >
                 <span>Browse All</span>
                 <ArrowRight className="w-3.5 h-3.5" />

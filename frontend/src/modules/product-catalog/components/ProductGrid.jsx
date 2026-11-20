@@ -184,12 +184,12 @@ function AutoScrollShelf({
       <div
         ref={scrollRef}
         onScroll={checkScroll}
-        className="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-3"
+        className="flex gap-3 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-3 -mx-4 px-4 sm:mx-0 sm:px-0"
       >
         {displayItems.map((product) => (
           <div
             key={product.id}
-            className="w-[calc(100%-1rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] shrink-0 snap-start"
+            className="w-[calc(50%-6px)] sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] shrink-0 snap-start"
           >
             <ProductCard product={product} />
           </div>
@@ -288,35 +288,35 @@ export default function ProductGrid() {
   }));
 
   return (
-    <section id="catalog" className="py-20 bg-brand-bg scroll-mt-20">
+    <section id="catalog" className="py-12 sm:py-20 bg-brand-bg scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-brand-border/60">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 sm:mb-10 pb-4 sm:pb-6 border-b border-brand-border/60">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sand text-brand-primary text-[10px] uppercase tracking-[0.25em] font-semibold mb-2">
               <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
               <span>Kurtis, Tops & Matching Bottoms</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal text-brand-dark tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-5xl font-normal text-brand-dark tracking-tight">
               The Kurti & Bottoms Studio
             </h2>
           </div>
 
-          <p className="text-xs sm:text-sm text-brand-muted max-w-sm mt-3 md:mt-0 font-light">
+          <p className="text-xs sm:text-sm text-brand-muted max-w-sm mt-2 md:mt-0 font-light">
             Every kurti is cut from pure Jaipur mulmul cotton, tailored for everyday poise and effortless pairing.
           </p>
         </div>
 
         {/* Filter Tabs & Sorting Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-10">
           {/* Pills Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap ${
+                className={`px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap shrink-0 ${
                   activeTab === tab.id
                     ? 'bg-brand-dark text-white shadow-md'
                     : 'bg-white hover:bg-brand-sand/50 text-brand-dark border border-brand-border/70'
@@ -328,12 +328,12 @@ export default function ProductGrid() {
           </div>
 
           {/* Sort Selector */}
-          <div className="flex items-center gap-2 self-end md:self-center">
-            <span className="text-xs text-brand-muted uppercase tracking-wider font-semibold">Sort by:</span>
+          <div className="flex items-center justify-between md:justify-end gap-2 self-stretch md:self-center">
+            <span className="text-[11px] sm:text-xs text-brand-muted uppercase tracking-wider font-semibold">Sort by:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-white border border-brand-border rounded-full px-4 py-2 text-xs font-medium text-brand-dark focus:outline-none focus:ring-1 focus:ring-brand-primary cursor-pointer shadow-2xs"
+              className="bg-white border border-brand-border rounded-full px-3 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-medium text-brand-dark focus:outline-none focus:ring-1 focus:ring-brand-primary cursor-pointer shadow-2xs"
             >
               <option value="featured">Featured Runway</option>
               <option value="price-low">Price: Low to High</option>

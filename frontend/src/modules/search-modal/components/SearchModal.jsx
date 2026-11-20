@@ -49,22 +49,22 @@ export default function SearchModal() {
     <div className="fixed inset-0 z-50 overflow-hidden">
       <div className="fixed inset-0 bg-black/70 backdrop-blur-xs" onClick={() => setIsOpen(false)} />
 
-      <div className="relative max-w-3xl mx-auto mt-16 sm:mt-24 px-4 z-10 animate-scaleUp">
+      <div className="relative max-w-3xl mx-auto mt-6 sm:mt-24 px-3 sm:px-4 z-10 animate-scaleUp">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-brand-border">
-          <div className="p-4 sm:p-5 flex items-center gap-3 border-b border-brand-border bg-brand-bg/50">
-            <Search className="w-5 h-5 text-brand-primary shrink-0" />
+          <div className="p-3.5 sm:p-5 flex items-center gap-2.5 sm:gap-3 border-b border-brand-border bg-brand-bg/50">
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary shrink-0" />
             <input
               ref={inputRef}
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search handcrafted short kurtis, kurti sets, pants, fabrics..."
-              className="flex-1 bg-transparent text-sm sm:text-base font-medium text-brand-dark placeholder-brand-muted/70 focus:outline-none"
+              placeholder="Search handcrafted short kurtis, sets, pants..."
+              className="flex-1 bg-transparent text-xs sm:text-base font-medium text-brand-dark placeholder-brand-muted/70 focus:outline-none"
             />
             {query && (
               <button
                 onClick={() => setQuery('')}
-                className="text-xs text-brand-muted hover:text-brand-dark px-2 py-1"
+                className="text-[11px] sm:text-xs text-brand-muted hover:text-brand-dark px-2 py-1"
               >
                 Clear
               </button>
