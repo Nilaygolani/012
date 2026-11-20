@@ -1,0 +1,701 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-01",
+      "name": "Nailmores Admin",
+      "email": "admin@nailmores.com",
+      "passwordHash": "$2a$10$VlY2xN/hnn4ZdFXkQkgg8.TKiEPjq17ZtafP1cgsXlnr4yfRXPHNe",
+      "role": "admin",
+      "phone": "+91 98765 00000",
+      "createdAt": "2026-11-13T09:47:15.440Z"
+    },
+    {
+      "id": "usr-demo-01",
+      "name": "Ritu Sharma",
+      "email": "ritu@example.com",
+      "passwordHash": "$2a$10$E85imvdpd.G40RhXjP9cOugI5Whj.pH81FUcqhA1jbCvJ.RpN/gv6",
+      "role": "user",
+      "phone": "+91 98765 43210",
+      "address": "Flat 402, Royal Palms, Jaipur, Rajasthan 302020",
+      "createdAt": "2026-11-13T09:47:15.516Z"
+    },
+    {
+      "id": "usr-1794565815476",
+      "name": "sw",
+      "email": "s@gmail.com",
+      "passwordHash": "$2a$10$w1/VH387xNghV79VlclOH.IXTp9O7oAht6m9IwVQKUuzSNiTDn4IC",
+      "role": "user",
+      "phone": "7776665554",
+      "address": "",
+      "createdAt": "2026-11-13T10:30:15.476Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1794635829277",
+      "name": "Drisi latest Women's Cherry Printed Roud Neck Sweatshirt - Onion Color.",
+      "category": "Short Kurtis",
+      "price": 399,
+      "originalPrice": 499,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Fleece Fabric",
+      "craft": "Sweatshirts Long Sleeves",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/1070673997/amevg_512.avif?width=512",
+        "https://images.meesho.com/images/products/1070673997/tme7t_512.avif?width=512",
+        "https://images.meesho.com/images/products/1070673997/vvxgd_512.avif?width=512",
+        "https://images.meesho.com/images/products/1070673997/moor1_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/1070673997/amevg_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/1070673997/tme7t_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794635725529",
+      "name": "Drisi latest Women's Cherry Printed Roud Neck Sweatshirt - Beige Color.",
+      "category": "Short Kurtis",
+      "price": 399,
+      "originalPrice": 499,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Fleece Fabric",
+      "craft": "Sweatshirts Long Sleeves",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/1070673998/34svi_512.avif?width=512",
+        "https://images.meesho.com/images/products/1070673998/bkuhb_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/1070673998/34svi_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/1070673998/bkuhb_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794635354548",
+      "name": "Stylish Sleeveless Maroon Crop Top with White Collar & \"Never Give Up\" Print",
+      "category": "Short Kurtis",
+      "price": 249,
+      "originalPrice": 399,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Cotton Blend",
+      "craft": "Tunic  V-Neck & Sleeveless",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/542755134/a5dhi_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755134/t7rjd_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755134/ywxnn_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755134/cffbl_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/542755134/a5dhi_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/542755134/t7rjd_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794635302976",
+      "name": "Stylish Sleeveless Green Crop Top with White Collar & \"Never Give Up\" Print",
+      "category": "Short Kurtis",
+      "price": 249,
+      "originalPrice": 399,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Cotton Blend",
+      "craft": "Tunic  V-Neck & Sleeveless",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/542755135/azqzh_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755135/xwux3_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755135/w19db_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755135/7vkac_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/542755135/azqzh_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/542755135/xwux3_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794635008378",
+      "name": "Stylish Sleeveless Brown Crop Top with White Collar & \"Never Give Up\" Print",
+      "category": "Short Kurtis",
+      "price": 249,
+      "originalPrice": 399,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Cotton Blend",
+      "craft": "Tunic  V-Neck & Sleeveless",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/542755132/zwuir_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755132/nkqb4_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755132/ktaml_512.avif?width=512",
+        "https://images.meesho.com/images/products/542755132/nkqb4_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/542755132/zwuir_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/542755132/nkqb4_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794634911058",
+      "name": "Cotton embroidery Work Casual Top Bottom Set",
+      "category": "Kurti Sets",
+      "price": 599,
+      "originalPrice": 699,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Cotton Blend",
+      "craft": "Handblock Wooden Print  Top & Bottom Sets",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/541393506/xipiz_512.avif?width=512",
+        "https://images.meesho.com/images/products/541393506/qdnyi_512.avif?width=512",
+        "https://images.meesho.com/images/products/541393506/odop7_512.avif?width=512",
+        "https://images.meesho.com/images/products/541393506/2smpn_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/541393506/xipiz_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/541393506/qdnyi_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794634703254",
+      "name": " Stylish Polyester Lycra Top & Bottom Set: Digital Printed T-Shirt + Pocket-Free Trouser for Girl & Women",
+      "category": "Co-ord Sets",
+      "price": 450,
+      "originalPrice": 620,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Cotton Blend",
+      "craft": " Solid   Printed / Shirt &  Palazzos ",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/996327140/xzabd_512.avif?width=512",
+        "https://images.meesho.com/images/products/996327140/zccvy_512.avif?width=512",
+        "https://images.meesho.com/images/products/996327140/34t3u_512.avif?width=512",
+        "https://images.meesho.com/images/products/996327140/qm7nq_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/996327140/xzabd_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/996327140/zccvy_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-1794568830962",
+      "name": "White Floral Print Cotton Co-Ord Set with Kurti and Palazzos || White co-ord set",
+      "category": "Kurti Sets",
+      "price": 449,
+      "originalPrice": 799,
+      "stock": 50,
+      "inStock": true,
+      "rating": 5,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "outOfStockSizes": [],
+      "fabric": "100% Pure Jaipur Mulmul Cotton",
+      "craft": "Floral",
+      "description": "Finely tailored contemporary ethnic wear silhouette.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim.",
+      "washCare": "Gentle hand wash in cold water.",
+      "images": [
+        "https://images.meesho.com/images/products/1096061321/8kuz6_512.avif?width=512",
+        "https://images.meesho.com/images/products/1096061321/162qa_512.avif?width=512",
+        "https://images.meesho.com/images/products/1096061321/g8ir6_512.avif?width=512"
+      ],
+      "image": "https://images.meesho.com/images/products/1096061321/8kuz6_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/1096061321/162qa_512.avif?width=512",
+      "badge": "New Arrival"
+    },
+    {
+      "id": "prod-001",
+      "name": "Tilton Women's Pink Faux Georgette With Sequins Multithreaded Embroidered Gown",
+      "category": "Long Kurtis",
+      "badge": "Bestseller",
+      "price": 649,
+      "originalPrice": 887,
+      "stock": 45,
+      "rating": 4.9,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "fabric": "100% Breathable  Cotton",
+      "craft": " Embroidered and  Floral",
+      "description": "An everyday chic short kurti with delicate square neckline, artisanal floral buti prints, and breathable airy feel. Perfect to pair effortlessly with high-waist jeans or straight trousers.",
+      "stylingTips": "Pair with relaxed white linen trousers or slim-fit denim and minimal silver jhumkis for office and college wear.",
+      "washCare": "Gentle hand wash in cold water using mild liquid detergent. Dry in shade.",
+      "image": "https://images.meesho.com/images/products/312631324/xsuvb_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/312631324/u32y8_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/312631324/xsuvb_512.avif?width=512",
+        "https://images.meesho.com/images/products/312631324/u32y8_512.avif?width=512",
+        "https://images.meesho.com/images/products/312631324/cubdk_512.avif?width=512",
+        "https://images.meesho.com/images/products/312631324/0ziki_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "XS",
+        "S"
+      ]
+    },
+    {
+      "id": "prod-002",
+      "name": "Chitrarekha Attractive Kurtis",
+      "category": "Long Kurtis",
+      "badge": "Hot Seller",
+      "price": 499,
+      "originalPrice": 649,
+      "stock": 35,
+      "rating": 4.8,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "fabric": "100% Pure  Georgette",
+      "craft": "Embroidered",
+      "description": "Flattering modern silhouette featuring an adjustable tie-up back corset cut, square neckline, and hand-carved botanical prints.",
+      "stylingTips": "Tie the back cords to cinch your waist. Pairs exquisitely with straight cotton palazzos or wide-leg jeans.",
+      "washCare": "First wash dry clean recommended due to natural indigo. Subsequent cold hand washes.",
+      "image": "https://images.meesho.com/images/products/413080888/uqpum_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/413080888/eiboc_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/413080888/uqpum_512.avif?width=512",
+        "https://images.meesho.com/images/products/413080888/eiboc_512.avif?width=512",
+        "https://images.meesho.com/images/products/413080888/awy0x_512.avif?width=512",
+        "https://images.meesho.com/images/products/413080888/pk5yu_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "XS",
+        "S",
+        "M"
+      ]
+    },
+    {
+      "id": "prod-003",
+      "name": "Anarkali Neck Round",
+      "category": "Long Kurtis",
+      "badge": "Festive Pick",
+      "price": 399,
+      "originalPrice": 449,
+      "stock": 28,
+      "rating": 4.9,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "fabric": "Festive",
+      "craft": "Anarkali- Floral Dress",
+      "description": "Complete 3-piece festive ensemble featuring a kalidar straight kurti, tapered pants with elasticated waistband, and an ethereal gossamer Kota Doria dupatta with shimmering zari borders.",
+      "stylingTips": "Style with antique gold mojaris and statement chandelier earrings for festive gatherings and family occasions.",
+      "washCare": "Dry clean preferred for the zari dupatta. Cold gentle wash for kurti & pants.",
+      "image": "https://images.meesho.com/images/products/499566831/iv6zv_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/499566831/t1m5m_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/499566831/iv6zv_512.avif?width=512",
+        "https://images.meesho.com/images/products/499566831/t1m5m_512.avif?width=512",
+        "https://images.meesho.com/images/products/499566831/kfkne_512.avif?width=512",
+        "https://images.meesho.com/images/products/499566831/z3ces_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "S"
+      ]
+    },
+    {
+      "id": "prod-004",
+      "name": "Women Shorts",
+      "category": "Ethnic Bottoms",
+      "badge": "New Arrival",
+      "price": 249,
+      "originalPrice": 385,
+      "stock": 40,
+      "rating": 4.7,
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "Free Size"
+      ],
+      "fabric": "Solid  Tie-ups",
+      "craft": "Mid Rise/ Drawstring",
+      "description": "Subtle elegance crafted for long workday comfort. Features deep functional pockets on both sides and an elongated A-line flow.",
+      "stylingTips": "Wear as a statement tunic with cigarette pants, or accessorize with an oxidized silver choker.",
+      "washCare": "Machine wash on gentle cycle with cold water. Warm iron inside out.",
+      "image": "https://images.meesho.com/images/products/237087919/tf9yo_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/237087919/x2vvc_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/237087919/tf9yo_512.avif?width=512",
+        "https://images.meesho.com/images/products/237087919/x2vvc_512.avif?width=512",
+        "https://images.meesho.com/images/products/237087919/ktkxe_512.avif?width=512",
+        "https://images.meesho.com/images/products/237087919/mm76q_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "Free Size"
+      ]
+    },
+    {
+      "id": "prod-005",
+      "name": "Black Straight Fit Jeans",
+      "category": "Ethnic Bottoms",
+      "badge": "Celebration Drop",
+      "price": 399,
+      "originalPrice": 699,
+      "stock": 18,
+      "rating": 5,
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "Free Size"
+      ],
+      "fabric": "Pure Mulmul Silk with Jeans & Tapered Pants",
+      "craft": " Threadwork & 24-Kali Flare",
+      "description": "A regal ivory flared kurti with straight trousers. Accented with subtle metallic thread embroidery along the neckline and sleeves.",
+      "stylingTips": "Pair with dewy nude makeup, golden block heels, and pearl drop studs.",
+      "washCare": "Dry clean only to maintain embroidery sheen.",
+      "image": "https://images.meesho.com/images/products/590761284/ishk7_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/590761284/ishk7_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/590761284/ishk7_512.avif?width=512",
+        "https://images.meesho.com/images/products/590761284/ishk7_512.avif?width=512",
+        "https://images.meesho.com/images/products/590761284/tzslb_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "36",
+        "Free Size"
+      ]
+    },
+    {
+      "id": "prod-006",
+      "name": "Women's Straight Leg Loose Casual Ice Blue Jeans",
+      "category": "Ethnic Bottoms",
+      "badge": "Everyday Essential",
+      "price": 349,
+      "originalPrice": 699,
+      "stock": 50,
+      "rating": 4.8,
+      "sizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "fabric": "100% Breathable Straight Leg Loose Casual Ice Blue Jeans",
+      "craft": " Back Elastic with Deep Pockets",
+      "description": "Ultra-versatile, structured yet airy trousers designed to complement all your short and long kurtis. Features deep side pockets that actually fit your smartphone.",
+      "stylingTips": "The universal bottom wear for all your floral kurtis and casual shirts.",
+      "washCare": "Gentle machine wash with like colors.",
+      "image": "https://images.meesho.com/images/products/528855435/ecait_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/528855435/ecait_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/528855435/ecait_512.avif?width=512",
+        "https://images.meesho.com/images/products/528855435/ecait_512.avif?width=512",
+        "https://images.meesho.com/images/products/528855435/pau5o_512.avif?width=512",
+        "https://images.meesho.com/images/products/528855435/f6d2o_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": []
+    },
+    {
+      "id": "prod-007",
+      "name": "New White Palazzos for Women White Reguler Use",
+      "category": "Ethnic Bottoms",
+      "badge": "Bestseller",
+      "price": 249,
+      "originalPrice": 399,
+      "stock": 50,
+      "rating": 4.9,
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "fabric": " Lace panel  White  Palazzos",
+      "craft": " Straight  Elastic waistband",
+      "description": "Airy flared palazzo pants that twirl like a skirt while giving you the ease and comfort of pants.",
+      "stylingTips": "Pair with our Short Kurtis for a breezy, Bohemian Indo-western fusion.",
+      "washCare": "Hand wash in cold water.",
+      "image": "https://images.meesho.com/images/products/468407059/vkz3b_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/468407059/gwi4m_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/468407059/vkz3b_512.avif?width=512",
+        "https://images.meesho.com/images/products/468407059/gwi4m_512.avif?width=512",
+        "https://images.meesho.com/images/products/468407059/x4gc5_512.avif?width=512",
+        "https://images.meesho.com/images/products/468407059/vu6oe_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    {
+      "id": "prod-008",
+      "name": "Girl's 3 Piece Heart Print Cami Top Long Sleeve Round Neck High Low Hem Top and Wide Leg Pants Sets |",
+      "category": "Co-ord Sets",
+      "badge": "Trending Duo",
+      "price": 599,
+      "originalPrice": 799,
+      "stock": 24,
+      "rating": 4.8,
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "fabric": "100% Pure Polycotton",
+      "craft": " Self-Design -  Purple  Crop Top & Palazzos",
+      "description": "Effortless coordinated matching tunic and ankle-length pants. Look instantly styled without spending time matching bottoms.",
+      "stylingTips": "Style with chunky loafers or flat juttis and sunglasses for brunch or travel.",
+      "washCare": "Gentle wash in cold water.",
+      "image": "https://images.meesho.com/images/products/514489324/etwcw_512.avif?width=512",
+      "hoverImage": "https://images.meesho.com/images/products/514489324/6h8jb_512.avif?width=512",
+      "images": [
+        "https://images.meesho.com/images/products/514489324/etwcw_512.avif?width=512",
+        "https://images.meesho.com/images/products/514489324/6h8jb_512.avif?width=512",
+        "https://images.meesho.com/images/products/514489324/acwtm_512.avif?width=512"
+      ],
+      "inStock": true,
+      "outOfStockSizes": []
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "NLM-849201",
+      "userId": "usr-demo-01",
+      "customerName": "Ritu Sharma",
+      "customerEmail": "ritu@example.com",
+      "customerPhone": "+91 98765 43210",
+      "shippingAddress": "Flat 402, Royal Palms, Jaipur, Rajasthan 302020",
+      "items": [
+        {
+          "id": "prod-001",
+          "name": "Gulzar Floral Handblock Short Kurti",
+          "price": 1299,
+          "quantity": 1,
+          "selectedSize": "M",
+          "image": "https://images.unsplash.com/photo-1596783049442-9988b4886616?auto=format&fit=crop&w=800&q=80"
+        }
+      ],
+      "total": 1299,
+      "paymentMethod": "Razorpay Online",
+      "paymentId": "pay_demo_849201",
+      "paymentStatus": "Paid",
+      "status": "Shipped",
+      "courierPartner": "BlueDart Express",
+      "trackingId": "BD84920199IN",
+      "trackingUrl": "https://www.bluedart.com/tracking?track=BD84920199IN",
+      "createdAt": "2026-11-11T09:47:15.516Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-001",
+      "productId": "prod-001",
+      "productName": "Gulzar Floral Handblock Short Kurti",
+      "userId": "usr-demo-01",
+      "userName": "Aishwarya Roy",
+      "rating": 5,
+      "comment": "The cotton fabric is so soft and lightweight. I wore it all day at work in the heat and it kept me so cool. Pairs perfectly with my high-waisted jeans!",
+      "status": "approved",
+      "createdAt": "2026-11-10T09:47:15.516Z"
+    },
+    {
+      "id": "rev-002",
+      "productId": "prod-003",
+      "productName": "Mehrunisa 3-Piece Kurti Pant & Kota Dupatta Set",
+      "userId": "usr-demo-01",
+      "userName": "Pooja Kashyap",
+      "rating": 5,
+      "comment": "The fit of the pants is so comfortable, and the Kota Doria dupatta has such a subtle sheen! Received so many compliments.",
+      "status": "approved",
+      "createdAt": "2026-11-07T09:47:15.516Z"
+    }
+  ],
+  "reels": [
+    {
+      "id": "reel-001",
+      "title": "The 32-Kali Twirl Test: Why Pure Jaipur Mulmul Flows Like Poetry",
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-turning-around-in-a-long-dress-39727-large.mp4",
+      "coverImage": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80",
+      "views": "124.5K",
+      "likes": "14.2K",
+      "productId": "prod-003",
+      "productName": "Mehrunisa Flared Anarkali Gown",
+      "productPrice": 3499,
+      "tags": [
+        "#AnarkaliTwirl",
+        "#MulmulCotton",
+        "#JaipurCraft"
+      ],
+      "createdAt": "2026-11-11T10:00:00.000Z"
+    },
+    {
+      "id": "reel-002",
+      "title": "Styling Gulzar Floral Short Kurti 3 Ways for Office & College",
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-young-woman-modelling-in-the-street-40294-large.mp4",
+      "coverImage": "https://images.unsplash.com/photo-1596783049442-9988b4886616?auto=format&fit=crop&w=800&q=80",
+      "views": "98.8K",
+      "likes": "9.6K",
+      "productId": "prod-001",
+      "productName": "Gulzar Floral Handblock Short Kurti",
+      "productPrice": 1299,
+      "tags": [
+        "#ShortKurtiStyling",
+        "#OfficeFit",
+        "#JaipurHandblock"
+      ],
+      "createdAt": "2026-11-10T10:00:00.000Z"
+    },
+    {
+      "id": "reel-003",
+      "title": "From Carved Teakwood Blocks to Finished Kurti: Behind the Loom",
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-hands-of-an-artisan-weaving-on-a-loom-41808-large.mp4",
+      "coverImage": "https://images.meesho.com/images/products/1096061321/162qa_512.avif?width=512",
+      "views": "145.2K",
+      "likes": "18.3K",
+      "productId": "prod-1794568830962",
+      "productName": "White Floral Print Cotton Co-Ord Set",
+      "productPrice": 449,
+      "tags": [
+        "#KarigarCraft",
+        "#SanganerPrints",
+        "#SlowFashion"
+      ],
+      "createdAt": "2026-11-09T10:00:00.000Z"
+    },
+    {
+      "id": "reel-004",
+      "title": "Unboxing the Farshi Suit Set: Mirror Test & Fitting Reaction",
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-young-woman-posing-for-a-fashion-photoshoot-40292-large.mp4",
+      "coverImage": "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80",
+      "views": "84.1K",
+      "likes": "112",
+      "productId": "prod-005",
+      "productName": "Noor Hand-Embroidered Kurti Set",
+      "productPrice": 3299,
+      "tags": [
+        "#Unboxing",
+        "#TryOnHaul",
+        "#NailmoresCouture"
+      ],
+      "createdAt": "2026-11-08T10:00:00.000Z"
+    },
+    {
+      "id": "reel-005",
+      "title": "Pockets in Ethnic Pants! Testing our Zivah Linen Trousers",
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-woman-walking-on-a-beach-at-sunset-1213-large.mp4",
+      "coverImage": "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=800&q=80",
+      "views": "67.4K",
+      "likes": "7.8K",
+      "productId": "prod-006",
+      "productName": "Zivah Linen Straight-Fit Ethnic Trousers",
+      "productPrice": 999,
+      "tags": [
+        "#PocketsInKurti",
+        "#LinenPants",
+        "#EverydayComfort"
+      ],
+      "createdAt": "2026-11-06T10:00:00.000Z"
+    }
+  ]
+}

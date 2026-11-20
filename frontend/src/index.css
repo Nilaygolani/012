@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-brand-dark font-sans selection:bg-brand-primary/10 selection:text-brand-primary;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Luxury Glassmorphism & Avant-Garde Utilities */
+.glass-header {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(231, 226, 216, 0.7);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(156, 65, 61, 0.06);
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #1C1917 0%, #2A1A19 50%, #7A2E2B 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C5A880 0%, #E8D3B9 50%, #C5A880 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.terracotta-glow {
+  box-shadow: 0 10px 40px -10px rgba(156, 65, 61, 0.35);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9C413D;
+}
