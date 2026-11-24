@@ -29,7 +29,7 @@ export default function CartDrawer() {
   const [couponInput, setCouponInput] = useState('');
   const [couponMsg, setCouponMsg] = useState(null);
   const [shippingAddress, setShippingAddress] = useState(user?.address || 'Flat 402, Royal Palms, Jaipur, Rajasthan 302020');
-  const [customerPhone, setCustomerPhone] = useState(user?.phone || '+91 98765 43210');
+  const [customerPhone, setCustomerPhone] = useState(user?.phone || '+91 75675 40190');
   const [processingPayment, setProcessingPayment] = useState(false);
   const [paymentError, setPaymentError] = useState(null);
 
