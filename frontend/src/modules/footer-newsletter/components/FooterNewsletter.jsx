@@ -155,11 +155,11 @@ export default function FooterNewsletter() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-gold shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 7567540190</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-brand-gold shrink-0" />
-                <span>care@nailmores.com</span>
+                <span>nailmores.in@gmail.com</span>
               </div>
             </div>
           </div>

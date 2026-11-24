@@ -299,8 +299,8 @@ export default function HeaderNavigation() {
               </div>
 
               <div className="mt-6 pt-4 border-t border-brand-border space-y-2 text-xs text-brand-muted">
-                <div>Client Care: <span className="font-semibold text-brand-dark">+91 98765 43210</span></div>
-                <div>Atelier Email: <span className="font-semibold text-brand-dark">care@nailmores.com</span></div>
+                <div>Client Care: <span className="font-semibold text-brand-dark">+91 75675 40190</span></div>
+                <div>Atelier Email: <span className="font-semibold text-brand-dark">nailmores.in@gmail.com</span></div>
                 <div className="pt-1 text-[11px] text-brand-gold font-medium">100% Mulmul Cotton &bull; Handcrafted in Jaipur</div>
               </div>
             </div>
