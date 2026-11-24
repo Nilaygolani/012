@@ -361,7 +361,7 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
                 <p className="text-xs text-brand-muted mt-0.5">Our Jaipur Atelier logistics team responds in under 15 minutes.</p>
               </div>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/917567540190"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider shrink-0 transition-colors shadow-sm"
@@ -807,7 +807,7 @@ export default function PatronCarePage({ initialTab = 'tracking', onBack }) {
                 <p className="text-xs text-brand-sand/70 mt-1">Chat directly with our Jaipur master tailor on WhatsApp for a personalized recommendation.</p>
               </div>
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/917567540190"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-gold hover:bg-white text-brand-dark px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider shrink-0 transition-all shadow-md"
