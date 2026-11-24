@@ -31,11 +31,10 @@ export default function FooterNewsletter() {
             Join The Nailmores Circle
           </span>
           <h3 className="font-serif text-xl sm:text-3xl font-normal text-white mt-1 mb-2">
-            Enjoy Flat ₹200 Off on Your Maiden Order
+            Be the First to Discover New Offers
           </h3>
           <p className="text-xs sm:text-sm text-brand-sand/70 max-w-md mx-auto mb-5 sm:mb-6 font-light">
-            Be the first to explore limited kurti drops, seasonal handblocks, and private secret sales.
-          </p>
+            Join the Nailmores Circle to get exclusive discounts, new collection updates, special offers and early access to our latest styles.   </p>
 
           {subscribed ? (
             <div className="inline-flex items-center gap-2 bg-emerald-900/60 border border-emerald-500/40 text-emerald-200 px-4 py-2.5 rounded-full text-xs">
