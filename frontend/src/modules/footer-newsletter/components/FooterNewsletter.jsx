@@ -39,7 +39,7 @@ export default function FooterNewsletter() {
           {subscribed ? (
             <div className="inline-flex items-center gap-2 bg-emerald-900/60 border border-emerald-500/40 text-emerald-200 px-4 py-2.5 rounded-full text-xs">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>You're in! Use coupon code <strong>NAIL200</strong> at checkout.</span>
+              <span>You're in the<strong> Nailmores Circle!</strong> Stay tuned for exclusive offers, new collections, and special surprises.</span>
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
